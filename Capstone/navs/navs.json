@@ -1,7 +1,7 @@
 [
     {
         "name": "home",
-        "href": "/home",
+        "href": "/",
         "id": 101
     },
     {
@@ -26,7 +26,7 @@
     },
     {
         "name": "order+pay",
-        "href": "/order+pay",
+        "href": "/order-pay",
         "id": 106
     }
 ]
