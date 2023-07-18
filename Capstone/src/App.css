@@ -1,3 +1,66 @@
+/* Font Family */
+
+/* Caviar Fonts */
+@font-face {
+  font-family: "Caviar Dreams Bold";
+  src: local("Caviar-Dreams"),
+  url("../assets/fonts/Caviar-Dreams/Caviar_Dreams_Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Caviar Dreams Bold Italic";
+  src: local("Caviar-Dreams"), 
+  url("../assets/fonts/Caviar-Dreams/CaviarDreams_BoldItalic.ttf") format("truetype")
+}
+
+@font-face {
+  font-family: "Caviar Dreams Italic";
+  src: local("Caviar-Dreams"),
+  url("../assets/fonts/Caviar-Dreams/CaviarDreams_Italic.ttf") format("truetype")
+}
+
+@font-face {
+  font-family: "Caviar Dreams";
+  src: local("Caviar-Dreams"),
+  url("../assets/fonts/Caviar-Dreams/CaviarDreams.ttf") format("truetype")
+}
+
+/* Metropolis Font */
+
+@font-face {
+  font-family: "Metropolis 1920";
+  src: local("Metropolis 1920"),
+  url("../assets/fonts/METROPOLIS 1920/Metropolis 1920.otf") format("truetype")
+}
+
+/* Josefin-Sans Font */
+
+@font-face {
+  font-family: "Josefin-Sans-regular";
+  src: local("Josefin-Sans"),
+  url("../assets/fonts/Josefin_Sans/static/JosefinSans-Regular.ttf") format("truetype")
+}
+
+/* Open Sans Condensed */
+
+@font-face {
+  font-family: "Open-Sans-Condensed";
+  src: local("Open-Sans-Condensed"),
+  url("../assets/fonts/open-sans-condensed/OpenSans-CondLight.ttf") format("truetype")
+}
+
+@font-face {
+  font-family: "Open-Sans-Condensed";
+  src: local("Open-Sans-Condensed-Bold"),
+  url("../assets/fonts/open-sans-condensed/OpenSans-CondBold.ttf")
+}
+
+@font-face { 
+  font-family: "Open-Sans-Condensed-Italic";
+  src: local("Open-Sans-Condensed-LigthItalic"),
+  url("../assets/fonts/open-sans-condensed/OpenSans-CondLightItalic.ttf")
+}
+
 /* body, html */
 /* Font Family */
 
@@ -135,10 +198,6 @@ li .active {
   color: white;
   padding-top: 400px;
   padding-bottom: 400px;
-}
-
-.dots {
-  
 }
 
 .testSubTitle {
@@ -320,4 +379,7 @@ li .active {
       padding: 2px 40px;
       color: white;
     }
+li .active {
+  color: #d0af3d;
+}
 

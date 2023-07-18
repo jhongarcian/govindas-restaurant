@@ -1,40 +1,41 @@
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
+import '../../src/App.css';
 
-const GiftCards = () => {
+const LeaveReviews = () => {
   return (
-    <Gift>
-      <div className="main"> 
+    <Reviews>
+      { <div className="main"> 
         <div className="container">
           <div className="img-container">
-            <img className="img" src="../assets/Rectangle 34624185.png" alt="" />
+            <div></div>
           </div>
           <div className="info-section">
             <div className="info-container">
-              <h1 className="title">Gift Cards</h1>
-              <div className="sub-title">Purchase an Instant Gift Certificate to Govindas Vegetarian Cuisine</div>
-              <div className="headings" >Gift Amount</div>
+              <h1 className="title">Leave A Review</h1>
+              <div className="sub-title">We'd Love to hear your Feedback</div>
+              <div className="headings" >Name :</div>
               <input className="fill-ins" type="text" />
-              <div className="headings">To :</div>
-              <input className="fill-ins" type="text" />
-              <div className="headings" >From :</div>
-              <input className="fill-ins" type="text" />
-              <div className="headings" >Include a gift message (optinal)</div>
+              <div className="headings" >Comment :</div>
               <input className="message" type="text" />
+              <div className="headings" >Rating :</div>
+              <input className="fill-ins" type="text" />
             <div className="btn-container">
-              <button className="btn">Add To Cart</button>
-              <div className="discount">Get 10% off first order</div>
+              <button className="btn">Submit</button>
+              <div className="discount">Get 10% off your next order when you leave a review</div>
             </div>
             </div>
           </div>
         </div>
-      </div>
-    </Gift>
+      </div>}
+    </Reviews>
   );
 };
 
-export default GiftCards;
+export default LeaveReviews;
 
-const Gift = styled.section`
+
+  const Reviews = styled.div`
   .main{
     height: 1229px;
     width: 100%;
