@@ -6,4 +6,6 @@ import Menu from "./Menu";
 import OrderPay from "./Order-pay";
 import Error from "./Error";
 
-export { AboutUs, Contact, GiftCards, Landing, Menu, OrderPay, Error};
+
+export { AboutUs, Contact, GiftCards, Landing, Menu, OrderPay, Error };
+

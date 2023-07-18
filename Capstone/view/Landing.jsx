@@ -1,8 +1,21 @@
+import React from "react";
+import ImageCarousel from "../components/Testimonials";
+import CateringRequest from "../components/CateringRequest";
+import { AboutUs, Background, OurMenu } from "../components"
 
 
 const Landing = () => {
   return (
-    <div>Landing</div>
-  )
-}
-export default Landing
+    <>
+      <Background />
+      <ImageCarousel />
+      <CateringRequest />
+      <AboutUs />
+      <ImageCarousel />
+      <CateringRequest />
+      <OurMenu />
+    </>
+  );
+};
+
+export default Landing;

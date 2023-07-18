@@ -1,9 +1,10 @@
 import { Route, Routes } from "react-router-dom";
 import { Landing, AboutUs, Contact, GiftCards, Menu, OrderPay, Error } from "../view";
 
+
 const Main = () => {
   return (
-    <main className="y-wrap">
+    <main>
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="about-us" element={<AboutUs />} />
@@ -13,6 +14,7 @@ const Main = () => {
         <Route path="order-pay" element={<OrderPay />} />
         <Route path="*" element={<Error />} />
       </Routes>
+     
     </main>
   );
 };
