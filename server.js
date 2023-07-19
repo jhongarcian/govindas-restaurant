@@ -5,8 +5,6 @@ const pgp = require("pg-promise")()
 require("dotenv").config()
 const db = pgp(process.env.URL)
 
-
-
 server.get('/heartbeat', (req, res) => {
     res.json({
         "message": "Heartbeat"
