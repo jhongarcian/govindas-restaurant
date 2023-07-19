@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 import "../../src/App.css";
-import image from "../../assets/vectors/vector-title.svg";
+import image from "/vectors/vector-title.svg";
 
 const Title = ({ title, info, subtitle }) => {
   return (

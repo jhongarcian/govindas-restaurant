@@ -1,5 +1,5 @@
 import { styled, keyframes } from "styled-components";
-import restaurant from "../../assets/restaurant.jpeg";
+import restaurant from "/restaurant.jpeg";
 import "../../src/App.css";
 
 const Background = () => {

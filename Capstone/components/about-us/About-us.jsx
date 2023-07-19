@@ -1,7 +1,7 @@
 import { styled } from "styled-components";
-import background from "../../assets/bg-about-us.png";
+import background from "/bg-about-us.png";
 import { Cards, Title } from "../";
-import first_image from "../../assets/about-images/food-1.png";
+import first_image from "/about-images/food-1.png";
 
 const AboutUs = () => {
   

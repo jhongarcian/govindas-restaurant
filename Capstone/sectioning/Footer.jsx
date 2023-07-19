@@ -5,11 +5,11 @@ const Footer = () => {
     <FooterContainer>
       <div className="footer-container">
         <div className="info">
-          <img className="bowl" src="../assets/Group (1).png" alt="" />
+          <img className="bowl" src="/Group (1).png" alt="" />
           <div className="mission">
             <img
               className="logo"
-              src="../assets/Primary_main-Govindas-Logo-T-(1)d 3.png"
+              src="/Primary_main-Govindas-Logo-T-(1)d 3.png"
               alt=""
             />
             We strive to offer you the best and humblest tastings with
@@ -22,7 +22,7 @@ const Footer = () => {
             <div className="coninfo">1320 W 34th St, Houston, TX 77018</div>
             <div className="coninfo">hello@govindashou.com</div>
             <div className="coninfo">(832) 831-9951</div>
-            <img className="orange" src="../assets/Orange.png" alt="" />
+            <img className="orange" src="/Orange.png" alt="" />
           </div>
 
           <div className="contact-container">
@@ -55,7 +55,7 @@ const Footer = () => {
               Order+ Pay
             </a>
           </div>
-          <div className="leaf-container"><img className="leaf" src="../assets/Group.png" alt="" /></div>
+          <div className="leaf-container"><img className="leaf" src="/Group.png" alt="" /></div>
         </div>
 
         <div className="bar"></div>

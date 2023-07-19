@@ -1,7 +1,7 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import data from "../navs/navs.json";
 import { styled } from "styled-components";
-import image from "../assets/gvc.png";
+import image from "/gvc.png";
 import { Spin as Hamburger } from "hamburger-react";
 import { useEffect, useState } from "react";
 import "../src/App.css"

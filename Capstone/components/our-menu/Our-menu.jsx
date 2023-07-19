@@ -1,9 +1,9 @@
 import { styled } from "styled-components";
 import { Title, MenuPrice } from "../index.js";
-import restaurant from "../../assets/our-menu/bg-special-event.jpeg";
-import logo from "../../assets/Primary_main-Govindas-Logo-T-(1)d 3.png";
-import dish1 from "../../assets/our-menu/dishpic.png";
-import burger from "../../assets/vectors/burger-two.svg";
+import restaurant from "/our-menu/bg-special-event.jpeg";
+import logo from "/Primary_main-Govindas-Logo-T-(1)d 3.png";
+import dish1 from "/our-menu/dishpic.png";
+import burger from "/vectors/burger-two.svg";
 import "../../src/App.css";
 
 const OurMenu = () => {
