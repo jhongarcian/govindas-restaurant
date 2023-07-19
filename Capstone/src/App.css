@@ -381,3 +381,215 @@ li .active {
 li .active {
   color: #d0af3d;
 }
+
+
+li .active {
+  color: #d0af3d;
+}
+
+/* Testimonials Styling */
+
+.imageCarousel {
+  display: flex;
+  flex-direction: column;
+  font-family: "Caviar Dreams Bold";
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 950px;
+  overflow: hidden;
+  position: relative;
+  Background-color: black;
+  opacity: 0.90;
+  background-image: url("../assets/blacklogo.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  color: white;
+  padding-top: 400px;
+  padding-bottom: 400px;
+}
+
+
+.testSubTitle {
+  font-size: 30px;
+  color: white;
+  font-family: "Josefin-Sans-regular";
+  font-weight:400;
+  text-align:center;
+  white-space: nowrap;
+  color: #d0af3d;
+}
+.testHeadContainer1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.testHeadContainer2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.testTitle {
+  display: flex;
+  height: 70px;
+  width: 510px;
+  padding-left: 20px;
+  color: white;
+  font-family: "Caviar Dreams Bold";
+  font-size: 55px;
+  font-weight: 700px;
+  
+
+}
+
+.testTitle2 {
+  padding-top: 40px;
+  letter-spacing: 0px;
+  font-family: "Josefin-Sans-regular";
+  font-size: 20px;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+
+}
+
+.openquote {
+  flex: 0.25;
+  height: 21px;
+  width: 25px;
+  padding: 2px;
+  position: start;
+  /* align-self: left; */
+  /* position: relative; */
+  /* flex-wrap: wrap; */
+  /* left: 650px; */
+  /* align-self: left; */
+}
+
+.closequote {
+    flex: 0.25;  
+    height: 21px;
+    width: 25px;
+    padding: 2px;
+    position: end;
+    /* position: relative; */
+    /* position: absolute;
+    right: 650px; */
+}
+.lineDeco {
+  height: 10.5px;
+  width: 49px;
+}
+
+.quoteContainer {
+  display: flex;
+  /* flex-direction: column; */
+  /* justify-content: center; */
+  align-items: center;
+  width: 100%; 
+  /* column-gap: 1px; */
+  /* flex-wrap: wrap; */
+  /* padding: 35px; */
+  margin: 0 auto;
+  /* margin: 50 50 50 50; */
+}
+.quoteBox {
+  /* min-width: 550px; */
+  min-width: 650px;
+  display: flex;
+  /* flex-direction: column; */
+  column-gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+.quoteControl {
+  display: flex;
+  /* flex: 20; */
+  flex-direction: column;
+  width: 650px;
+  
+}
+.imageContainer {
+  display: flex;
+  flex-direction: column;
+  /* flex:1; */
+  width: 100%;
+  text-align: center;
+  align-items: center;
+}
+
+.quote {
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  font-family: "Caviar Dreams Bold";
+  max-width: 750px;
+  height: 10px;
+  /* margin: 0 auto; */
+  
+}
+
+.image-pic {
+  display: flex;
+  max-width: 245px;
+  max-height: 245px;
+  align-self: center;
+  /* margin-left: 38%; */
+  justify-content: center;
+  
+}
+
+.quotes {
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  font-family: "Caviar Dreams Bold";
+  width: 750px;
+  /* margin: 0 auto; */
+}
+
+.name {
+  font-size: 20px;
+  font-family: "Josefin-Sans-regular";
+  font-style: italic;
+  font-weight: lighter;
+  align-self: center;
+  color: white;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  column-gap: 20px;
+  row-gap: 10px;
+  color: white;
+  }
+
+  .button1 {
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 25px;
+    font-size: 22px;
+    font-family: "Caviar Dreams Bold";
+    padding:2px  40px;
+    color: white;
+  }
+
+    .button2 {
+      background-color: transparent;
+      border: 2px solid white;
+      border-radius: 25px;
+      font-size: 22px;
+      font-family: "Caviar Dreams Bold";
+      padding: 2px 40px;
+      color: white;
+    }
+
+li .active {
+  color: #d0af3d;
+}
