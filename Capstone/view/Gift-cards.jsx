@@ -6,7 +6,7 @@ const GiftCards = () => {
       <div className="main"> 
         <div className="container">
           <div className="img-container">
-            <img className="img" src="../assets/Rectangle 34624185.png" alt="" />
+            <img className="img" src="Rectangle 34624185.png" alt="" />
           </div>
           <div className="info-section">
             <div className="info-container">

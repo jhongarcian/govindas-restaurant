@@ -1,5 +1,5 @@
 import React from "react";
-import image from "../assets/backgroundCateringSection.png";
+import image from "/backgroundCateringSection.png";
 
 const CateringRequest = () => {
 
