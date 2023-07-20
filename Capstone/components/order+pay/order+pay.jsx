@@ -7,15 +7,15 @@ const OrderRedirect = () => {
     <div className="redirectSpecialsContainer">
       <div className="titleContainer">
         <div className="order">
-          <img src="../assets/linedeco.png" className="lineDeco" alt="line" />
+          <img src="linedeco.png" className="lineDeco" alt="line" />
           <span className="orderTitle">ORDER ONLINE</span>
-          <img src="../assets/linedeco.png" className="lineDeco" alt="line" />
+          <img src="linedeco.png" className="lineDeco" alt="line" />
         </div>
 
         <div className="specials">
-          <img src="../assets/linedeco.png" className="lineDeco" alt="line" />
+          <img src="linedeco.png" className="lineDeco" alt="line" />
           <span className="specialTitle"> SPECIAL MENU</span>
-          <img src="../assets/linedeco.png" className="lineDeco" alt="line" />
+          <img src="linedeco.png" className="lineDeco" alt="line" />
         </div>
       </div>
       <div className="orderpay">
@@ -28,11 +28,11 @@ const OrderRedirect = () => {
 
       <br />
       <div className="squareImageContainer">
-        <img src="../assets/uberImage.png" className="uber" />
-        <img src="../assets/spacer.png" className="spacer" />
+        <img src="uberImage.png" className="uber" />
+        <img src="spacer.png" className="spacer" />
         <br />
         <br />
-        <img src="../assets/specials.png" className="specialsImage" />
+        <img src="specials.png" className="specialsImage" />
       </div>
       <br />
       <div className="socialLinksContainer">
@@ -51,20 +51,20 @@ const OrderRedirect = () => {
             .
           </span>
         </div>
-        <img src="../assets/spacer.png" className="spacer2" />
+        <img src="spacer.png" className="spacer2" />
         <div className="rightSocial">
           <span className="followUs">Follow Us On Social Media!</span>
           <br />
-          <img src="../assets/spacer.png" className="spacer3" />
+          <img src="spacer.png" className="spacer3" />
           <br />
-          <img src="./assets/facebook.png" className="facebook" href="" />
+          <img src="facebook.png" className="facebook" href="" />
           <img
-            src="./assets/instagram.png"
+            src="instagram.png"
             className="instagram"
             href="https://www.instagram.com/govindashou/"
           />
           <img
-            src="./assets/twitter.png"
+            src="twitter.png"
             className="twitter"
             href="https://t.co/fuk6Nlwki8"
           />

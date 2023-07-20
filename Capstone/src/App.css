@@ -255,7 +255,7 @@ li .active {
   position: relative;
   Background-color: black;
   opacity: 0.95;
-  background-image: url("../assets/blacklogo.png");
+  background-image: url("blacklogo.png");
   background-repeat: no-repeat;
   background-position: center;
   color: white;
@@ -507,7 +507,7 @@ li .active {
   display: flex;
   flex-direction: column;
   /* column-gap: 50px; */
-  background-image: url("/assets/backgroundCateringSection.png");
+  background-image: url("backgroundCateringSection.png");
   /* background-color: black; */
   width: 100%;
   background-repeat: no-repeat;
