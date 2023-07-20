@@ -20,7 +20,7 @@ const CateringRequest = () => {
         <span className="cateringRequestText">
           Please give us at least 10 days before the desired Catering Date   
         </span>
-        <img src="../assets/spacer.png" className="spacer" />
+        <img src="spacer.png" className="spacer" />
         <button className="cateringButton" href="jgarcia@email.com">
           Request Catering
         </button>
