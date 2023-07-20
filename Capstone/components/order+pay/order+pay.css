@@ -1,0 +1,191 @@
+.redirectSpecialContainer {
+  width:100%;
+  display: flex;
+  padding-left: 10px;
+  padding-right: 10px;
+  justify-content: center;
+}
+
+.titleContainer {
+  display: flex;
+  font-family: "Caviar Dreams";
+  font-size: 45px;
+  /* column-gap: 50px; */
+  padding-top: 50px;
+  /* padding-bottom: 50px; */
+}
+
+.order {
+  display: flex;
+  column-gap: 20px;
+  align-self: center;
+  width: 700px;
+  padding-left: 100px;
+  font-weight: bold;
+}
+
+.orderLink {
+  text-decoration: underline;
+  /* width: 1000px; */
+  /* display: flex; */
+  flex-wrap: nowrap;
+}
+
+.spacer4 {
+  width: 1px;
+  height: 1px;
+}
+
+.instaLink {
+  text-decoration: underline;
+  color: #F2C94C;
+}
+
+.orderpay {
+  padding-left: 225px;
+    width: 800px;
+   font-family: "Caviar Dreams";
+   font-size: 22px;
+   font-weight: bold;
+   color: #F2C94C;
+}
+
+.specials {
+  display: flex;
+  column-gap: 20px;
+  width: 700px;
+  padding-left: 145px;
+  font-weight: bold;
+}
+
+.spacer {
+  width: 275px;
+}
+
+.lineDeco {
+  height: 24px;
+  width: 52px;
+  margin-top: 15px;
+}
+
+.yellowContainer {
+  display: flex;
+  font-family: "Caviar Dreams";
+  font-size: 22px;
+  justify-content: center;
+  width: 100%;
+  font-weight: bold;
+  color: #F2C94C;
+}
+
+.specialsURL {
+    /* width: 1000px; */
+}
+
+.specialsBottom {
+  width: 100%;
+  display: flex;
+  column-gap: 5px;
+}
+
+.spacer1 {
+  max-width: 5px;
+  height: 0px;
+}
+
+.uberContainer {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  font-family: "Caviar Dreams";
+  font-size: 22px;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 50px;
+  width: 100%;
+}
+
+.uberEats {
+  text-align: center;
+  font-family: "Caviar Dreams";
+  font-weight: bold;
+}
+
+.squareImageContainer {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.uber {
+  height: 464px;
+  width: 464px;
+}
+
+.specialsImage {
+  height: 464px;
+  width: 464px;
+}
+
+.socialLinksContainer {
+  display: flex;
+  /* width:100%; */
+  padding-left: 100px;
+  font-family: "Caviar Dreams";
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.spacer2 {
+  width: 138px;
+}
+
+.facebook {
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+}
+
+.instagram {
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+}
+
+.twitter {
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+}
+
+.rightSocial {
+  display: flex;
+}
+
+.spacer3 {
+  width: 30px;
+}
+
+.spacer4 {
+  max-width:25px;
+}
+
+.leftSocial {
+  padding-top: 20px;
+  min-width: 600px;
+  padding-left: 10px;
+}
+
+.followUs {
+  padding-top: 20px;
+}
+
+.insta {
+  color: #F2C94C;
+  cursor: pointer;
+}
+
+.tweet {
+  color: #F2C94C;
+  cursor: pointer;
+}

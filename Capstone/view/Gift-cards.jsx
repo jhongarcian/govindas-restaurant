@@ -31,6 +31,7 @@ const GiftCards = () => {
     </Gift>
   );
 };
+
 export default GiftCards;
 
 const Gift = styled.section`
