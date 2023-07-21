@@ -17,6 +17,18 @@
   column-gap: 2%;
 }
 
+.specialTitle{
+  color: #000;
+font-family: Caviar Dreams;
+font-size: 45px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+letter-spacing: 2.25px;
+text-transform: uppercase;
+}
+
+
 .keep-up{
   display: flex;
   color: #D0AF3D;
@@ -53,6 +65,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  justify-content: space-evenly;
+
   width: 692px;
   height: 866px;
   flex-shrink: 0;
@@ -96,8 +111,6 @@
 .specials {
   display: flex;
   column-gap: 20px;
-  width: 700px;
-  padding-left: 145px;
   font-weight: bold;
 }
 
