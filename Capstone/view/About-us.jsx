@@ -15,6 +15,6 @@ export default About
 
 const Container = styled.section`
   .container{
-    padding: 10% 0px 0px 0px;
+    padding: 0% 0px 0px 0px;
   }
 `
