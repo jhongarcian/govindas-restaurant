@@ -1,17 +1,24 @@
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate, useLocation } from "react-router-dom";
 import data from "../navs/navs.json";
 import { styled } from "styled-components";
-import image from "/gvc.png";
+import image from "/Primary_main-Govindas-Logo-T-(1)d 3.png";
 import { Spin as Hamburger } from "hamburger-react";
 import { useEffect, useState } from "react";
-import "../src/App.css"
+import "../src/App.css";
 
 const Header = () => {
+  const location = useLocation();
+  const currentPath = location.pathname;
+  useEffect(() => {
+    console.log(currentPath);
+  }, [currentPath]);
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
   const handleClick = () => navigate("/");
   const handleNavClick = (e) => {
-    setIsOpen(!isOpen);
+    if(windowWidth <= 992) {
+      setIsOpen(!isOpen);
+    }
   };
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
@@ -37,8 +44,8 @@ const Header = () => {
     });
 
   return (
-    <HeaderContainer size={windowWidth}>
-      <NavContainer className="y-wrap">
+    <HeaderContainer size={windowWidth} path={currentPath}>
+      <NavContainer className="y-wrap" isMobile={isOpen}>
         <IconContainer size={windowWidth} onClick={handleClick}>
           <Image src={image} />
         </IconContainer>
@@ -61,26 +68,25 @@ const Header = () => {
 export default Header;
 
 const HeaderContainer = styled.header`
-font-family: "Open-Sans-Condensed";
-  background: transparent;
+  font-family: "Open-Sans-Condensed";
+  background: ${(props) => (props.path === "/" ? "transparent;" : "#121618;")};
   font-size: 18px;
   font-style: normal;
   font-weight: bold;
   line-height: normal;
   text-transform: uppercase;
-  position: absolute;
-  width: ${(props) => (props.size <= 992) ? "100%;" : "90%;"};
+  position: ${(props) => (props.path === "/" ? "absolute;" : "relative;")};
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 20;
+  left: 0;
+  z-index: 1000;
   color: #fff;
   margin: 0 auto;
+  width: 100%;
 `;
 
 const NavContainer = styled.nav`
-position: relative;
-  width: 100%;
+  position: relative;
+  width: ${(props) => (props.isMobile && "100%;")};
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -105,7 +111,7 @@ const SmallScreenContainer = styled.ul`
   height: 100vh;
   background-color: #0f78d3;
   position: absolute;
-  top: ${(props) => (props.isMobile ? "0;" : "-100%;")};
+  top: ${(props) => (props.isMobile ? "0;" : "-1000%;")};
   opacity: ${(props) => (props.isMobile ? "1;" : "0;")};
   transition: top 1s ease-in-out;
   left: 0;

@@ -1,4 +1,6 @@
-.redirectSpecialContainer {
+.redirectSpecialsContainer {
+  display: flex;
+  flex-direction: column;
   width:100%;
   display: flex;
   padding-left: 10px;
@@ -10,17 +12,60 @@
   display: flex;
   font-family: "Caviar Dreams";
   font-size: 45px;
-  /* column-gap: 50px; */
-  padding-top: 50px;
-  /* padding-bottom: 50px; */
+  padding: 50px 0px 50px 0px;
+  justify-content: center;
+  column-gap: 2%;
+}
+
+.keep-up{
+  display: flex;
+  color: #D0AF3D;
+  text-align: center;
+  font-family: Josefin Sans;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 40px; /* 153.846% */
+  justify-content: center;
+}
+.insta{
+  color: #D0AF3D;
+  font-family: Josefin Sans;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 40px;
+  text-decoration-line: underline;
+  text-transform: lowercase;
+}
+.description{
+  display: flex;
+  color: #5A5252;
+  text-align: center;
+  font-family: Josefin Sans;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 40px; /* 181.818% */
+  width: 523px;
+}
+.section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 692px;
+  height: 866px;
+  flex-shrink: 0;
+  border-radius: 20px;
+  border: 2px solid #F5F2E8;
+  background: #FFF;
 }
 
 .order {
   display: flex;
   column-gap: 20px;
-  align-self: center;
   width: 700px;
-  padding-left: 100px;
+  justify-content: center;
   font-weight: bold;
 }
 
@@ -42,8 +87,6 @@
 }
 
 .orderpay {
-  padding-left: 225px;
-    width: 800px;
    font-family: "Caviar Dreams";
    font-size: 22px;
    font-weight: bold;
@@ -141,25 +184,27 @@
 }
 
 .facebook {
-  width: 60px;
-  height: 60px;
+  width: 48px;
+  height: 48px;
   cursor: pointer;
 }
 
 .instagram {
-  width: 60px;
-  height: 60px;
+  width: 48px;
+  height: 48px;
   cursor: pointer;
 }
 
 .twitter {
-  width: 60px;
-  height: 60px;
+  width: 48px;
+  height: 48px;
   cursor: pointer;
 }
 
 .rightSocial {
   display: flex;
+  height: 8%;
+  align-items: center;
 }
 
 .spacer3 {
@@ -177,7 +222,13 @@
 }
 
 .followUs {
-  padding-top: 20px;
+  color: #000;
+  text-align: center;
+  font-family: Josefin Sans;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
 }
 
 .insta {

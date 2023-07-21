@@ -41,8 +41,11 @@ export default AboutUs;
 
 const BackgroundContainer = styled.div`
   width: 100%;
-  height: 1200px;
+  height: 1850px;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   @media (width >= 996px) {
     height: 100%;
@@ -50,12 +53,13 @@ const BackgroundContainer = styled.div`
 `;
 
 const ImageFaded = styled.div`
-  position: relative;
+  position: absolute;
   width: 100%;
   height: 100%;
 `;
 
 const ImageBg = styled.img`
+position: relative;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -76,10 +80,12 @@ const ImageOverlay = styled.div`
 `;
 
 const Wrapper = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 24px 0;
   display: flex;
   flex-direction: column;
   gap: 28px;

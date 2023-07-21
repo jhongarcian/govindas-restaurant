@@ -62,11 +62,53 @@ const ImageCarousel = ({ images }) => {
         <h2 className="testSubTitle">Special Selection</h2>
       </div>
       <div className="testHeadContainer2">
-        <img src="/linedeco.png" className="lineDeco" alt="line" />
+        <svg
+          width="51"
+          height="14"
+          viewBox="0 0 51 14"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g id="Group 1261153700">
+            <path
+              id="Vector 32"
+              d="M1 1.75L25.5 12.25L50 1.75"
+              stroke="#D0AF3D"
+              stroke-width="2"
+            />
+            <path
+              id="Vector 33"
+              d="M1 12.25L25.5 1.75L50 12.25"
+              stroke="#D0AF3D"
+              stroke-width="2"
+            />
+          </g>
+        </svg>
         <br></br>
         <h1 className="testTitle"> OUR CLIENTS SAY</h1>
         <br />
-        <img src="/linedeco.png" className="lineDeco" alt="line" />
+        <svg
+          width="51"
+          height="14"
+          viewBox="0 0 51 14"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g id="Group 1261153700">
+            <path
+              id="Vector 32"
+              d="M1 1.75L25.5 12.25L50 1.75"
+              stroke="#D0AF3D"
+              stroke-width="2"
+            />
+            <path
+              id="Vector 33"
+              d="M1 12.25L25.5 1.75L50 12.25"
+              stroke="#D0AF3D"
+              stroke-width="2"
+            />
+          </g>
+        </svg>
       </div>
       <h3 className="testTitle2">
         We love to hear from our customers, so please leave a comment or say
@@ -87,13 +129,12 @@ const ImageCarousel = ({ images }) => {
               <img src="/openquote.png" className="openquote" />
               <br />
               <div className="quote">
-              <span className="quotes"> {data[currentImage].quote} </span>
+                <span className="quotes"> {data[currentImage].quote} </span>
               </div>
               <br />
               <img src="/closequote.png" className="closequote" />
             </div>
           </div>
-
         </div>
 
         <br />
