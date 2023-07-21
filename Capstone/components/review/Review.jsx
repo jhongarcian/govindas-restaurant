@@ -1,11 +1,43 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
 import '../../src/App.css';
 
 const LeaveReviews = () => {
+  const [name,setName] = useState("")
+  const [comment,setComment] = useState("")
+  const [rating,setRating] = useState(5)
+
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    try {
+      const response = await fetch("http://localhost:8080/add-review", {
+        method:"POST", 
+        headers:{
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Headers": "*",
+        },
+        body:JSON.stringify({
+          rating: rating,
+          comment: comment,
+          name: name,
+        }),
+      })
+      const data = await response.json();
+      setName("")
+      setComment("")
+      setRating(5)
+      return data
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
+
+
   return (
     <Reviews>
-      { <div className="main"> 
+      { <form className="main" onSubmit={handleSubmit}> 
         <div className="container">
           <div className="img-container">
             <div></div>
@@ -15,19 +47,19 @@ const LeaveReviews = () => {
               <h1 className="title">Leave A Review</h1>
               <div className="sub-title">We'd Love to hear your Feedback</div>
               <div className="headings" >Name :</div>
-              <input className="fill-ins" type="text" />
+              <input className="fill-ins" type="text" onChange={(e) => setName(e.target.value) } value={name}/>
               <div className="headings" >Comment :</div>
-              <input className="message" type="text" />
+              <input className="message" type="text" onChange={(e) => setComment(e.target.value)} value={comment}/>
               <div className="headings" >Rating :</div>
-              <input className="fill-ins" type="text" />
+              <input className="fill-ins" type="text" onChange={(e) => setRating(e.target.value)}value={rating}/>
             <div className="btn-container">
-              <button className="btn">Submit</button>
+              <button type='submit' className="btn">Submit</button>
               <div className="discount">Get 10% off your next order when you leave a review</div>
             </div>
             </div>
           </div>
         </div>
-      </div>}
+      </form>}
     </Reviews>
   );
 };
