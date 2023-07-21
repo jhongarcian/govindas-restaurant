@@ -2,6 +2,9 @@ import { styled } from "styled-components";
 import background from "/bg-about-us.png";
 import { Cards, Title } from "../";
 import first_image from "/about-images/food-1.png";
+import second_image from "/about-images/Rectangle 15.png";
+import third_image from "/about-images/Rectangle 16.png";
+import fourth_image from "/about-images/Rectangle 17.png";
 
 const AboutUs = () => {
   
@@ -26,9 +29,9 @@ const AboutUs = () => {
         />
         <ImagesContainer>
           <Cards image={first_image} />
-          <Cards image={first_image} />
-          <Cards image={first_image} />
-          <Cards image={first_image} />
+          <Cards image={second_image} />
+          <Cards image={third_image} />
+          <Cards image={fourth_image} />
         </ImagesContainer>
       </Wrapper>
     </BackgroundContainer>

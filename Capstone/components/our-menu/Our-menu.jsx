@@ -3,6 +3,10 @@ import { Title, MenuPrice } from "../index.js";
 import restaurant from "/our-menu/bg-special-event.jpeg";
 import logo from "/Primary_main-Govindas-Logo-T-(1)d 3.png";
 import dish1 from "/our-menu/dishpic.png";
+import dish2 from "/our-menu/Ellipse 3588 (1).png";
+import dish3 from "/our-menu/Ellipse 3588 (2).png";
+import dish4 from "/our-menu/Ellipse 3588 (3).png";
+import dish5 from "/our-menu/Ellipse 3588 (5).png";
 import burger from "/vectors/burger-two.svg";
 import "../../src/App.css";
 
@@ -60,32 +64,32 @@ const OurMenu = () => {
           <MenuPrice
             price={50}
             title={"Tofu Cooked in Tomato Sauce"}
-            alergy={"vegan, gluten free"}
+            alergy={"Vegan, Gluten Friendly"}
             image={dish1}
           ></MenuPrice>
           <MenuPrice
             price={50}
-            title={"Tofu Cooked in Tomato Sauce"}
-            alergy={"vegan, gluten free"}
-            image={dish1}
+            title={"Eggplant/Tomatoes cooked with Yogurt"}
+            alergy={"Gluten Friendly"}
+            image={dish2}
           ></MenuPrice>
           <MenuPrice
             price={50}
-            title={"Tofu Cooked in Tomato Sauce"}
-            alergy={"vegan, gluten free"}
-            image={dish1}
+            title={"Bhindi Masala Okra and Potatoes"}
+            alergy={"Vegan, Gluten Friendly"}
+            image={dish3}
           ></MenuPrice>
           <MenuPrice
             price={50}
-            title={"Tofu Cooked in Tomato Sauce"}
-            alergy={"vegan, gluten free"}
-            image={dish1}
+            title={"Chickpeas cooked with Oil and Spices"}
+            alergy={"Vegan, Gluten Friendly"}
+            image={dish4}
           ></MenuPrice>
           <MenuPrice
             price={50}
-            title={"Tofu Cooked in Tomato Sauce"}
-            alergy={"vegan, gluten free"}
-            image={dish1}
+            title={"Chana Dal & Moong Dal cooked with Ginger"}
+            alergy={"Vegan, Gluten Friendly"}
+            image={dish5}
           ></MenuPrice>
         </MenuContainer>
       </Wrapper>

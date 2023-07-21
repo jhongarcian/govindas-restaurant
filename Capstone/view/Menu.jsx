@@ -1,8 +1,14 @@
+import TodaysMenu from "../components/todaysmenu/todays-menu";
+import { OurMenu } from "../components";
+
 
 
 const Menu = () => {
   return (
-    <div>Menu</div>
+    <>
+    <OurMenu />
+    <TodaysMenu/>
+    </>
   )
 }
 export default Menu
