@@ -183,8 +183,7 @@ text-transform: uppercase;
 
 .socialLinksContainer {
   display: flex;
-  /* width:100%; */
-  padding-left: 100px;
+  justify-content: center;
   font-family: "Caviar Dreams";
   font-weight: bold;
   font-size: 20px;
@@ -214,7 +213,7 @@ text-transform: uppercase;
 
 .rightSocial {
   display: flex;
-  height: 8%;
+  height: 5%;
   align-items: center;
 }
 
@@ -226,11 +225,6 @@ text-transform: uppercase;
   max-width:25px;
 }
 
-.leftSocial {
-  padding-top: 20px;
-  min-width: 600px;
-  padding-left: 10px;
-}
 
 .followUs {
   color: #000;
