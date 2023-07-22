@@ -144,4 +144,48 @@ const Gift = styled.section`
     font-weight: 400;
     line-height: 40px; /* 160% */
   }
+  @media (max-width: 1440px) {
+    .container{
+      display:flex;
+      flex-direction: column;
+      width: 100%;
+      display: flex; 
+      justify-content: center;
+    }
+  }
+  @media (max-width: 1440px) {
+    .img{
+      width: 386px;
+      height: 498px;
+      flex-shrink: 0;
+    }
+  }
+  @media (max-width: 1440px) {
+    .img-container{
+      display: flex;
+      justify-content: center;
+      flex: 0;
+      padding: 0px 2% 0px 5%; 
+    }
+  }
+  @media (max-width: 1440px) {
+    .fill-ins{
+      width: 490px;
+      height: 65px;
+      flex-shrink: 0;
+      margin: 10px 0px 10px 0px;
+    }
+  }
+  @media (max-width: 1440px) {
+    .message{
+      width: 490px;
+      height: 166px;
+      flex-shrink: 0;
+      fill: #FFF;
+      stroke-width: 1px;
+      stroke: rgba(0, 0, 0, 0.34);
+    }
+  }
+
+
 `

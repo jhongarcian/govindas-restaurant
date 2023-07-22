@@ -92,7 +92,7 @@ const TodaysMenu = () => {
             <div className="menu-footer">
                 <p className="times">*Wednesday, Friday & Sunday 100% Vegan Menu</p>
                 <p className="bar">|</p>
-                <p className="socials">Follow us on Twitter:<p className="govindas">@GovindashouM</p></p>
+                <p className="socials">Follow us on Twitter:<a href="https://twitter.com/GovindashouM" target="_blank" className="govindas">@GovindashouM</a></p>
             </div>
           </div>
         </div>
@@ -283,4 +283,12 @@ const Menu = styled.section`
     opacity: 0.20000000298023224;
     background: #000;
   }
+  @media (max-width: 1640px) {
+    .container {
+      width: 75%;
+      display: flex;
+      justify-content: center;
+    }
+  }
+
 `;

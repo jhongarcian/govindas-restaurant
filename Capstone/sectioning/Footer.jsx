@@ -19,9 +19,10 @@ const Footer = () => {
           </div>
           <div className="reach-us">
             <div className="contact">Contact</div>
-            <div className="coninfo">1320 W 34th St, Houston, TX 77018</div>
-            <div className="coninfo">hello@govindashou.com</div>
-            <div className="coninfo">(832) 831-9951</div>
+            <a href="https://www.google.com/maps/place/Govinda's/@29.8177565,-95.4262318,17z/data=!3m1!4b1!4m6!3m5!1s0x8640c7a793081815:0xa368b1c70ee2e165!8m2!3d29.8177519!4d-95.4236569!16s%2Fg%2F11c0w0g5fw?entry=ttu" target="_blank"
+            className="coninfo"> <img  className="contactimgs"src="/location.png" alt="" />1320 W 34th St, Houston, TX 77018</a>
+            <a href="/contact" className="coninfo"> <img  className="contactimgs"src="/sms.png" alt="" />hello@govindashou.com</a>
+            <a href="tel: 832-831-9951"className="coninfo"><img  className="contactimgs"src="/call.png" alt="" />(832) 831-9951</a>
             <img className="orange" src="/Orange.png" alt="" />
           </div>
 
@@ -64,7 +65,7 @@ const Footer = () => {
             <div className="copyright">Copyright 2023{" "}
             <div className="govinda">Govinda's Vegetarian Cuisine</div>{" "}
             <div className="space">|</div> All Rights Reserved</div>
-            <div className="socials">Follow By :</div>
+            <div className="socials">Follow By : <a href="https://www.facebook.com/GovindasHouston/" target="_blank"><img className="imgs" src="/Group 5.png" alt="" /></a> <a href="https://twitter.com/GovindashouM" target="_blank"><img className="imgs" src="/Group 4.png" alt="" /></a></div>
           </div>
         </div>
       </div>
@@ -148,9 +149,10 @@ const FooterContainer = styled.section`
     margin: 15px 0px 0px 0px;
   }
   .coninfo {
-    display: inline-flex;
-    flex-direction: column;
-    align-items: flex-start;
+    display: flex;
+    flex-direction: row;
+    column-gap: 6px;
+    align-items: center;
     margin: 20px 0px 0px 0px;
     color: #fff;
     font-family: Josefin Sans;
@@ -206,6 +208,7 @@ const FooterContainer = styled.section`
   }
   .copyright {
     color: #fff;
+    column-gap: 6px;
     font-family: Josefin Sans;
     font-size: 12px;
     font-style: normal;
@@ -216,6 +219,8 @@ const FooterContainer = styled.section`
     align-items: center;
   }
   .socials{
+    display: flex;
+    justify-content: space-between;
     color: #fff;
     font-family: Josefin Sans;
     font-size: 12px;
@@ -226,4 +231,24 @@ const FooterContainer = styled.section`
     flex-direction: row;
     align-items: center;
   }
+  .imgs{
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    margin: 4px;
+  }
+  .contactimgs{
+    width: 20px;
+    height: 20px;
+  }
+  @media (max-width: 1440px) {
+    .info {
+      padding-top: 40px;
+      height: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
+
 `;

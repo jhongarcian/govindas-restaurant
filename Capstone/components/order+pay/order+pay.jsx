@@ -13,7 +13,7 @@ const OrderRedirect = () => {
             <img src="linedeco.png" className="lineDeco" alt="line" />
           </div>
       <div className="orderpay">
-        <a href="govindashou.com/onlinepay" className="orderLink">
+        <a href="/order-pay" className="orderLink">
           Order & Pay Online
         </a>
       </div>
@@ -25,12 +25,12 @@ const OrderRedirect = () => {
         <div className="leftSocial">
           <span className="twitterLink">
             View Our Daily Specials on
-            <span href="https://t.co/fuk6Nlwki8" className="tweet">
+            <a href="https://twitter.com/GovindashouM" target="_blank" className="tweet">
               {" "}
               Twitter
-            </span>{" "}
+            </a>{" "}
             &
-            <a href="https://www.instagram.com/govindashou/" className="insta">
+            <a href="https://www.instagram.com/govindashou/" target="_blank" className="insta">
               {" "}
               Instagram
             </a>
@@ -53,17 +53,21 @@ const OrderRedirect = () => {
           <img src="specials.png" className="specialsImage" />
           <div className="rightSocial">
           <span className="followUs">Follow Us On Social Media :</span>
-          <img src="facebook.png" className="facebook" href="" />
+           <a href="https://www.facebook.com/GovindasHouston/" target="_blank">
+           <img src="facebook.png" className="facebook" href="" />
+           </a>
+          <a href="https://www.instagram.com/govindashou/" target="_blank">
           <img
             src="instagram.png"
             className="instagram"
-            href="https://www.instagram.com/govindashou/"
           />
+          </a>
+          <a href="https://twitter.com/GovindashouM" target="_blank">
           <img
             src="twitter.png"
             className="twitter"
-            href="https://t.co/fuk6Nlwki8"
           />
+          </a>
         </div>
 
 

@@ -50,7 +50,7 @@ const LeaveReviews = () => {
               <input className="fill-ins" type="text" onChange={(e) => setName(e.target.value) } value={name}/>
               <div className="headings" >Comment :</div>
               <input className="message" type="text" onChange={(e) => setComment(e.target.value)} value={comment}/>
-              <div className="headings" >Rating :</div>
+              <div className="headings" >Rating : 1-5</div>
               <input className="fill-ins" type="text" onChange={(e) => setRating(e.target.value)}value={rating}/>
             <div className="btn-container">
               <button type='submit' className="btn">Submit</button>
