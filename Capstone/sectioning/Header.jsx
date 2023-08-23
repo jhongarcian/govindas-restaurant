@@ -9,14 +9,11 @@ import "../src/App.css";
 const Header = () => {
   const location = useLocation();
   const currentPath = location.pathname;
-  useEffect(() => {
-    console.log(currentPath);
-  }, [currentPath]);
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
   const handleClick = () => navigate("/");
   const handleNavClick = (e) => {
-    if(windowWidth <= 992) {
+    if (windowWidth <= 992) {
       setIsOpen(!isOpen);
     }
   };
@@ -35,8 +32,8 @@ const Header = () => {
     data &&
     data.map((item) => {
       return (
-        <NavList>
-          <NavLink onClick={handleNavClick} key={item.id} to={item.href}>
+        <NavList key={item.id}>
+          <NavLink onClick={handleNavClick} to={item.href}>
             {item.name}
           </NavLink>
         </NavList>
@@ -44,8 +41,12 @@ const Header = () => {
     });
 
   return (
-    <HeaderContainer size={windowWidth} path={currentPath}>
-      <NavContainer className="y-wrap" isMobile={isOpen}>
+    <HeaderContainer
+      size={windowWidth}
+      $path={currentPath}
+      $mobile={windowWidth <= 992}
+    >
+      <NavContainer className="y-wrap" $mobile={isOpen.toString()}>
         <IconContainer size={windowWidth} onClick={handleClick}>
           <Image src={image} />
         </IconContainer>
@@ -54,10 +55,14 @@ const Header = () => {
         )}
         {windowWidth <= 992 && (
           <MobileContainer>
-            <SmallScreenContainer isMobile={isOpen}>
-              {navs}
-            </SmallScreenContainer>
-            <Hamburger toggled={isOpen} toggle={setIsOpen} size={28} />
+            <SmallScreenContainer $mobile={isOpen}>{navs}</SmallScreenContainer>
+            <BurgerContainer $mobile={isOpen}>
+              <Hamburger
+                toggled={isOpen}
+                toggle={setIsOpen}
+                size={28}
+              />
+            </BurgerContainer>
           </MobileContainer>
         )}
       </NavContainer>
@@ -69,24 +74,23 @@ export default Header;
 
 const HeaderContainer = styled.header`
   font-family: "Open-Sans-Condensed";
-  background: ${(props) => (props.path === "/" ? "transparent;" : "#121618;")};
+  background: ${(props) => (props.$path === "/" ? "transparent;" : "#121618;")};
   font-size: 18px;
   font-style: normal;
   font-weight: bold;
   line-height: normal;
   text-transform: uppercase;
-  position: ${(props) => (props.path === "/" ? "absolute;" : "relative;")};
+  position: ${(props) => (props.$path === "/" ? "absolute;" : "relative;")};
+  color: ${(props) => (props.$mobile === true ? "#000;" : "#fff;")};
   top: 0;
   left: 0;
   z-index: 1000;
-  color: #fff;
   margin: 0 auto;
   width: 100%;
 `;
 
 const NavContainer = styled.nav`
-  position: relative;
-  width: ${(props) => (props.isMobile && "100%;")};
+  width: ${(props) => (props.$mobile === true ? "100%;" : "90%;")};
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -109,11 +113,11 @@ const LargeScreenContainer = styled.ul`
 const SmallScreenContainer = styled.ul`
   width: 100vw;
   height: 100vh;
-  background-color: #0f78d3;
-  position: absolute;
-  top: ${(props) => (props.isMobile ? "0;" : "-1000%;")};
-  opacity: ${(props) => (props.isMobile ? "1;" : "0;")};
-  transition: top 1s ease-in-out;
+  background-color: #fbf8ef;
+  position: fixed;
+  top: ${(props) => (props.$mobile ? "0;" : "-1000%;")};
+  opacity: ${(props) => (props.$mobile ? "1;" : "0;")};
+  transition: top 7ms ease-in-out;
   left: 0;
   right: 0;
   bottom: 0;
@@ -130,8 +134,16 @@ const MobileContainer = styled.div`
   align-items: center;
 `;
 
+const BurgerContainer = styled.div`
+    position: ${(props) => (props.$mobile === true ? "fixed;" : "relative;")};
+    color: ${(props) => (props.$mobile === true ? "#000;" : "#fff;")};
+`;
+
 const NavList = styled.li`
   text-transform: uppercase;
+  &:hover {
+    color: #d1b142;
+  }
 `;
 
 const Image = styled.img`

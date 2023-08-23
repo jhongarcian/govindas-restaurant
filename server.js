@@ -1,9 +1,21 @@
+require("dotenv").config();
 const express = require("express");
 const server = express();
-const es6Renderer = require("express-es6-template-engine")
-const pgp = require("pg-promise")()
-require("dotenv").config()
-const db = pgp(process.env.URL)
+const cors = require("cors");
+const cookieParser = require("cookie-parser");
+const PORT = process.env.PORT || 3030;
+
+const {giftCardsRouter, sessionIdRetrieves, today_menu, insertReview} = require("./routes");
+
+
+
+server.use(cors({
+    origin: ["http://localhost:5173", "https://govindas.vercel.app/", "https://capstone-henryesc.vercel.app/",  "*"],
+    methods: ["GET", "POST", "DELETE", 'UPDATE','PUT','PATCH'],
+    credentials: true
+}));
+server.use(express.json());
+server.use(cookieParser());
 
 server.get('/heartbeat', (req, res) => {
     res.json({
@@ -11,24 +23,30 @@ server.get('/heartbeat', (req, res) => {
     });
 });
 
-server.post("/add-review", async (req, res) => {
-    const { name, rating, comment } = req.body;
+server.post("/gift-card", async (req, res) => {
+    const inputFields = req.body;
+    console.log(inputFields)
 
-    try {
-        await db.none(`
-            INSERT INTO reviews (name, rating, comment)
-            VALUES ($1, $2, $3)
-        `, [name, rating, comment]);
-
-        res.status(200).json({message: "Review added successfully"});
+    res.json({"message": "added successfully"})
+    // try {
+    //     await db.none(`
+    //         INSERT INTO buyers (id, first_name, last_name, email, phone_number, amount)
+    //         VALUES ($1, $2, $3, $4, $5, $6)
+    //     `, [])
+    // } catch (error) {
         
-    } catch (err) {
-        console.error("Error,", err);
-        res.status(500).json({error: "Something went wrong"});
-    }
-});
+    // }
+})
 
-server.listen(8080, () => {
-    console.log("The server is running at PORT 8080");
-});
 
+// Routes
+
+server.use("/", giftCardsRouter);
+server.use("/", sessionIdRetrieves);
+server.use("/", today_menu);
+server.use("/", insertReview);
+
+
+server.listen(PORT, () => {
+    console.log(`The server is running at PORT ${PORT}`);
+});

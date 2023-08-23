@@ -1,4 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
-import React, { useState } from 'react';
+import todaysMenuReducer from "../features/todays_menuSlice";
 
-export default configureStore;
+export default configureStore({
+    reducer: {
+        todays_menu: todaysMenuReducer,
+    }
+});

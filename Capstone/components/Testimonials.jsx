@@ -74,13 +74,13 @@ const ImageCarousel = ({ images }) => {
               id="Vector 32"
               d="M1 1.75L25.5 12.25L50 1.75"
               stroke="#D0AF3D"
-              stroke-width="2"
+              strokeWidth="2"
             />
             <path
               id="Vector 33"
               d="M1 12.25L25.5 1.75L50 12.25"
               stroke="#D0AF3D"
-              stroke-width="2"
+              strokeWidth="2"
             />
           </g>
         </svg>
@@ -99,13 +99,13 @@ const ImageCarousel = ({ images }) => {
               id="Vector 32"
               d="M1 1.75L25.5 12.25L50 1.75"
               stroke="#D0AF3D"
-              stroke-width="2"
+              strokeWidth="2"
             />
             <path
               id="Vector 33"
               d="M1 12.25L25.5 1.75L50 12.25"
               stroke="#D0AF3D"
-              stroke-width="2"
+              strokeWidth="2"
             />
           </g>
         </svg>

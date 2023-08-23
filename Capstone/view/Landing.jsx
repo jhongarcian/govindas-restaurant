@@ -1,7 +1,6 @@
 import React from "react";
 import ImageCarousel from "../components/Testimonials";
-import CateringRequest from "../components/CateringRequest";
-import { AboutUs, Background, OurMenu,} from "../components"
+import { AboutUs, Background, OurMenu, CateringRequest} from "../components"
 import LeaveReviews from "../components/review/Review"
 import OrderRedirect from "../components/order+pay/order+pay"
 import GiftCards from "../components/gifts/gift-cards"

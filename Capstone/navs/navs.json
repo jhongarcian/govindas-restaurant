@@ -28,5 +28,10 @@
         "name": "order+pay",
         "href": "/order-pay",
         "id": 106
+    },
+    {
+        "name": "catering",
+        "href": "/catering",
+        "id": 107
     }
 ]

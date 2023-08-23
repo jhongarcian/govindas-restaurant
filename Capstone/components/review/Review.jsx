@@ -11,7 +11,7 @@ const LeaveReviews = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      const response = await fetch("http://localhost:8080/add-review", {
+      const response = await fetch("https://govindasbackend.vercel.app/add-review", {
         method:"POST", 
         headers:{
           "Content-Type": "application/json",
