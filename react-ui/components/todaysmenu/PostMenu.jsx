@@ -8,7 +8,7 @@ import "../../src/App.css";
 const PostMenu = () => {
   const [selectedFile, setSelectedFile] = useState(null);
   const [isFileReadyToSend, setIsFileReadyToSend] = useState(false);
-  const [isPostSuccessful, setIsPostSuccessul] = useState(false)
+  const [isPostSuccessful, setIsPostSuccessul] = useState(false);
   const [items, setItems] = useState([
     { id: 1, value: "" },
     { id: 2, value: "" },
@@ -61,10 +61,10 @@ const PostMenu = () => {
           method: "POST",
           body: formData,
         };
-        const response = await fetch("https://govindasbackend.vercel.app/upload", options);
+        const response = await fetch("http://localhost:8080/upload", options);
         if (response.ok) {
           const data = await response.json();
-          console.log(data)
+          console.log(data);
           setIsPostSuccessul(true);
           setSelectedFile(null);
           setItems(items.map((item) => ({ ...item, value: "" })));
@@ -115,46 +115,45 @@ const PostMenu = () => {
     <BackGroundContainer>
       {isPostSuccessful && <FileName>Your tweet has been posted!</FileName>}
       {!isPostSuccessful && (
-      <FormContainer>
-        <Title
-          info={"Twitter post"}
-          title={"Daily Tweet"}
-          subtitle={"Please fill out all the information below"}
-        />
-        <Wrapper>{inputs}</Wrapper>
-        <Button type="button" onClick={handleAddInput}>
-          <IoAdd />
-        </Button>
-        <FileContainer>
-          <FileInput
-            required
-            accept="image/jpeg, image/png, image/jpg"
-            type="file"
-            onChange={handleFileChange}
-            id="fileInput"
+        <FormContainer>
+          <Title
+            info={"Twitter post"}
+            title={"Daily Tweet"}
+            subtitle={"Please fill out all the information below"}
           />
-          <CustomInputFile
-            $readyToSend={isFileReadyToSend}
-            htmlFor="fileInput"
-          ></CustomInputFile>
-          <FileName>
-            {selectedFile ? `${selectedFile.name}` : "No file choosen"}
-          </FileName>
-          {isFileReadyToSend && (
-            <RemoveButton
+          <Wrapper>{inputs}</Wrapper>
+          <Button type="button" onClick={handleAddInput}>
+            <IoAdd />
+          </Button>
+          <FileContainer>
+            <FileInput
+              required
+              accept="image/jpeg, image/png, image/jpg"
+              type="file"
+              onChange={handleFileChange}
+              id="fileInput"
+            />
+            <CustomInputFile
               $readyToSend={isFileReadyToSend}
-              type="button"
-              onClick={handleRemove}
-            >
-              <CiCircleRemove />
-            </RemoveButton>
-          )}
-        </FileContainer>
-        <SendTweet type="submit" onClick={handleSubmit}>
-          Send Tweet
-        </SendTweet>
-      </FormContainer>
-
+              htmlFor="fileInput"
+            ></CustomInputFile>
+            <FileName>
+              {selectedFile ? `${selectedFile.name}` : "No file choosen"}
+            </FileName>
+            {isFileReadyToSend && (
+              <RemoveButton
+                $readyToSend={isFileReadyToSend}
+                type="button"
+                onClick={handleRemove}
+              >
+                <CiCircleRemove />
+              </RemoveButton>
+            )}
+          </FileContainer>
+          <SendTweet type="submit" onClick={handleSubmit}>
+            Send Tweet
+          </SendTweet>
+        </FormContainer>
       )}
     </BackGroundContainer>
   );
@@ -204,7 +203,6 @@ const Wrapper = styled.div`
   .full-width {
     width: 100%;
   }
-
 `;
 
 const Input = styled.input`
@@ -331,7 +329,6 @@ const SendTweet = styled(Button)`
   height: 40px;
   border-radius: 16px;
   background: #1976d2;
-
 
   &:hover {
     background: #1976d2c8;

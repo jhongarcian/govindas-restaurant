@@ -1,13 +1,12 @@
 import { styled } from "styled-components";
 import background from "/bg-about-us.png";
-import { Cards, Title } from "../";
+import { Cards, Title } from "..";
 import first_image from "/about-images/food-1.png";
 import second_image from "/about-images/Rectangle 15.png";
 import third_image from "/about-images/Rectangle 16.png";
 import fourth_image from "/about-images/Rectangle 17.png";
 
 const AboutUs = () => {
-  
   const information = {
     info: "our story",
     title: "about us",
@@ -59,7 +58,7 @@ const ImageFaded = styled.div`
 `;
 
 const ImageBg = styled.img`
-position: relative;
+  position: relative;
   width: 100%;
   height: 100%;
   object-fit: cover;

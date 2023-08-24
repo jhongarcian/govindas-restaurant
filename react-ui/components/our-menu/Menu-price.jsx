@@ -89,7 +89,6 @@ const PriceStyle = styled.span`
   font-style: normal;
   font-weight: 600;
   line-height: normal;
-
 `;
 
 const Price = ({ text }) => {

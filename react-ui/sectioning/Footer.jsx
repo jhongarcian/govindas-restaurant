@@ -19,10 +19,24 @@ const Footer = () => {
           </div>
           <div className="reach-us">
             <div className="contact">Contact</div>
-            <a href="https://www.google.com/maps/place/Govinda's/@29.8177565,-95.4262318,17z/data=!3m1!4b1!4m6!3m5!1s0x8640c7a793081815:0xa368b1c70ee2e165!8m2!3d29.8177519!4d-95.4236569!16s%2Fg%2F11c0w0g5fw?entry=ttu" target="_blank"
-            className="coninfo"> <img  className="contactimgs"src="/location.png" alt="" />1320 W 34th St, Houston, TX 77018</a>
-            <a href="/contact" className="coninfo"> <img  className="contactimgs"src="/sms.png" alt="" />hello@govindashou.com</a>
-            <a href="tel: 832-831-9951"className="coninfo"><img  className="contactimgs"src="/call.png" alt="" />(832) 831-9951</a>
+            <a
+              href="https://www.google.com/maps/place/Govinda's/@29.8177565,-95.4262318,17z/data=!3m1!4b1!4m6!3m5!1s0x8640c7a793081815:0xa368b1c70ee2e165!8m2!3d29.8177519!4d-95.4236569!16s%2Fg%2F11c0w0g5fw?entry=ttu"
+              target="_blank"
+              className="coninfo"
+            >
+              {" "}
+              <img className="contactimgs" src="/location.png" alt="" />
+              1320 W 34th St, Houston, TX 77018
+            </a>
+            <a href="/contact" className="coninfo">
+              {" "}
+              <img className="contactimgs" src="/sms.png" alt="" />
+              hello@govindashou.com
+            </a>
+            <a href="tel: 832-831-9951" className="coninfo">
+              <img className="contactimgs" src="/call.png" alt="" />
+              (832) 831-9951
+            </a>
             <img className="orange" src="/Orange.png" alt="" />
           </div>
 
@@ -56,16 +70,31 @@ const Footer = () => {
               Order+ Pay
             </a>
           </div>
-          <div className="leaf-container"><img className="leaf" src="/Group.png" alt="" /></div>
+          <div className="leaf-container">
+            <img className="leaf" src="/Group.png" alt="" />
+          </div>
         </div>
 
         <div className="bar"></div>
         <div className="bottom">
           <div className="copyright-section">
-            <div className="copyright">Copyright 2023{" "}
-            <div className="govinda">Govinda's Vegetarian Cuisine</div>{" "}
-            <div className="space">|</div> All Rights Reserved</div>
-            <div className="socials">Follow By : <a href="https://www.facebook.com/GovindasHouston/" target="_blank"><img className="imgs" src="/Group 5.png" alt="" /></a> <a href="https://twitter.com/GovindashouM" target="_blank"><img className="imgs" src="/Group 4.png" alt="" /></a></div>
+            <div className="copyright">
+              Copyright 2023{" "}
+              <div className="govinda">Govinda's Vegetarian Cuisine</div>{" "}
+              <div className="space">|</div> All Rights Reserved
+            </div>
+            <div className="socials">
+              Follow By :{" "}
+              <a
+                href="https://www.facebook.com/GovindasHouston/"
+                target="_blank"
+              >
+                <img className="imgs" src="/Group 5.png" alt="" />
+              </a>{" "}
+              <a href="https://twitter.com/GovindashouM" target="_blank">
+                <img className="imgs" src="/Group 4.png" alt="" />
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -121,7 +150,7 @@ const FooterContainer = styled.section`
   .bottom {
     height: 10px;
   }
-  .reach-us{
+  .reach-us {
     display: flex;
     flex-direction: column;
     width: 250px;
@@ -189,10 +218,10 @@ const FooterContainer = styled.section`
     font-weight: 700;
     line-height: normal;
   }
-  .leaf-container{
+  .leaf-container {
     display: flex;
-    flex-direction:column-reverse;
-    padding: 0px 20px 40px 0px
+    flex-direction: column-reverse;
+    padding: 0px 20px 40px 0px;
   }
   .leaf {
     width: 69.391px;
@@ -218,7 +247,7 @@ const FooterContainer = styled.section`
     flex-direction: row;
     align-items: center;
   }
-  .socials{
+  .socials {
     display: flex;
     justify-content: space-between;
     color: #fff;
@@ -231,13 +260,13 @@ const FooterContainer = styled.section`
     flex-direction: row;
     align-items: center;
   }
-  .imgs{
+  .imgs {
     width: 32px;
     height: 32px;
     flex-shrink: 0;
     margin: 4px;
   }
-  .contactimgs{
+  .contactimgs {
     width: 20px;
     height: 20px;
   }
@@ -250,5 +279,4 @@ const FooterContainer = styled.section`
       justify-content: space-between;
     }
   }
-
 `;

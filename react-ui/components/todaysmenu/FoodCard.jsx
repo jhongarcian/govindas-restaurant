@@ -29,7 +29,6 @@ const Card = styled.div`
   height: 120px;
   padding: 14px;
   gap: 14px;
-  
 `;
 
 const Image = styled.img`

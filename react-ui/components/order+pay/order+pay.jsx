@@ -1,9 +1,12 @@
 import React from "react";
 import { styled } from "styled-components";
 import { SiUbereats } from "react-icons/si";
-import { BiLogoFacebookCircle, BiLogoInstagram, BiLogoTwitter } from "react-icons/bi";
+import {
+  BiLogoFacebookCircle,
+  BiLogoInstagram,
+  BiLogoTwitter,
+} from "react-icons/bi";
 import Title from "../title/Title";
-
 
 const OrderRedirect = () => {
   return (
@@ -29,7 +32,9 @@ const OrderRedirect = () => {
             <Image src="uberImage.png" />
           </ImageContainer>
           <SocialLinkContainer>
-            <Button href="https://www.ubereats.com/store/govindas-vegetarian-cuisine/TEe_ZaVCQiCrwEaTsBy65Q?diningMode=DELIVERY&pl=JTdCJTIyYWRkcmVzcyUyMiUzQSUyMjE0MDUlMjBXJTIwMzR0aCUyMFN0JTIwYTMwNSUyMiUyQyUyMnJlZmVyZW5jZSUyMiUzQSUyMkVpc3hOREExSUZjZ016UjBhQ0JUZENCaE16QTFMQ0JJYjNWemRHOXVMQ0JVV0NBM056QXhPQ3dnVlZOQklpQWFIZ29XQ2hRS0VnbXAtNF8wcDhkQWhoSGhZMUZkSHhDT2RoSUVZVE13TlElMjIlMkMlMjJyZWZlcmVuY2VUeXBlJTIyJTNBJTIyZ29vZ2xlX3BsYWNlcyUyMiUyQyUyMmxhdGl0dWRlJTIyJTNBMjkuODE2OTg5NyUyQyUyMmxvbmdpdHVkZSUyMiUzQS05NS40MjQyMDkxOTk5OTk5OSU3RA%3D%3D&ps=1"><SiUbereats/></Button>
+            <Button href="https://www.ubereats.com/store/govindas-vegetarian-cuisine/TEe_ZaVCQiCrwEaTsBy65Q?diningMode=DELIVERY&pl=JTdCJTIyYWRkcmVzcyUyMiUzQSUyMjE0MDUlMjBXJTIwMzR0aCUyMFN0JTIwYTMwNSUyMiUyQyUyMnJlZmVyZW5jZSUyMiUzQSUyMkVpc3hOREExSUZjZ016UjBhQ0JUZENCaE16QTFMQ0JJYjNWemRHOXVMQ0JVV0NBM056QXhPQ3dnVlZOQklpQWFIZ29XQ2hRS0VnbXAtNF8wcDhkQWhoSGhZMUZkSHhDT2RoSUVZVE13TlElMjIlMkMlMjJyZWZlcmVuY2VUeXBlJTIyJTNBJTIyZ29vZ2xlX3BsYWNlcyUyMiUyQyUyMmxhdGl0dWRlJTIyJTNBMjkuODE2OTg5NyUyQyUyMmxvbmdpdHVkZSUyMiUzQS05NS40MjQyMDkxOTk5OTk5OSU3RA%3D%3D&ps=1">
+              <SiUbereats />
+            </Button>
           </SocialLinkContainer>
         </CardContainer>
         <CardContainer>
@@ -44,21 +49,31 @@ const OrderRedirect = () => {
           </AnchorContainer>
           <DescriptionContainer>
             <span>
-            Make sure to follow us on social media to see our latest menu additions
+              Make sure to follow us on social media to see our latest menu
+              additions
             </span>
           </DescriptionContainer>
           <ImageContainer>
             <Image src="specials.png" />
           </ImageContainer>
           <SocialFlexContainer>
-            <Facebook href="https://z-upload.facebook.com/GovindasHouston" target="_blank">
+            <Facebook
+              href="https://z-upload.facebook.com/GovindasHouston"
+              target="_blank"
+            >
               <BiLogoFacebookCircle />
             </Facebook>
-            <Instagram href="https://www.instagram.com/govindashou/" target="_blank">
-                <BiLogoInstagram />
+            <Instagram
+              href="https://www.instagram.com/govindashou/"
+              target="_blank"
+            >
+              <BiLogoInstagram />
             </Instagram>
-            <Twitter href="https://twitter.com/govindashoum?lang=en" target="_blank">
-                <BiLogoTwitter />
+            <Twitter
+              href="https://twitter.com/govindashoum?lang=en"
+              target="_blank"
+            >
+              <BiLogoTwitter />
             </Twitter>
           </SocialFlexContainer>
         </CardContainer>
@@ -156,7 +171,7 @@ const SocialLinkContainer = styled.div`
 `;
 
 const Button = styled.a`
-width: 120px;
+  width: 120px;
   padding: 6px 24px;
   border: 1px solid #04a357;
   border-radius: 12px;
@@ -182,7 +197,7 @@ const SocialFlexContainer = styled.div`
   gap: 24px;
   justify-content: center;
   align-items: center;
-`
+`;
 
 const SocialLink = styled.a`
   width: 34px;
@@ -214,9 +229,9 @@ const Instagram = styled(SocialLink)`
 
 const Twitter = styled(SocialLink)`
   border: 2px solid #0f94ed;
-  color:  #0f94ed;
+  color: #0f94ed;
   &:hover {
     color: #fff;
     background: #0f94ed;
   }
-`
+`;

@@ -57,11 +57,7 @@ const Header = () => {
           <MobileContainer>
             <SmallScreenContainer $mobile={isOpen}>{navs}</SmallScreenContainer>
             <BurgerContainer $mobile={isOpen}>
-              <Hamburger
-                toggled={isOpen}
-                toggle={setIsOpen}
-                size={28}
-              />
+              <Hamburger toggled={isOpen} toggle={setIsOpen} size={28} />
             </BurgerContainer>
           </MobileContainer>
         )}
@@ -135,8 +131,8 @@ const MobileContainer = styled.div`
 `;
 
 const BurgerContainer = styled.div`
-    position: ${(props) => (props.$mobile === true ? "fixed;" : "relative;")};
-    color: ${(props) => (props.$mobile === true ? "#000;" : "#fff;")};
+  position: ${(props) => (props.$mobile === true ? "fixed;" : "relative;")};
+  color: ${(props) => (props.$mobile === true ? "#000;" : "#fff;")};
 `;
 
 const NavList = styled.li`

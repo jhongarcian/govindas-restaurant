@@ -24,7 +24,8 @@ const data = [
   },
   {
     name: "Samantha HungryForMore",
-    quote: "I am hungry for more! I will be back for sure. Buffet was out of this world!",
+    quote:
+      "I am hungry for more! I will be back for sure. Buffet was out of this world!",
     src: "/testimonials/samantha-hungryformore.png",
     id: 4,
   },
@@ -44,18 +45,19 @@ const data = [
   },
 ];
 
-
-
 const ImageCarousel = ({ images }) => {
   const [currentImage, setCurrentImage] = useState(0);
   const handlePrev = () => {
     setCurrentImage((prevImage) =>
-      (prevImage === 0?data.length - 1:prevImage - 1));
+      prevImage === 0 ? data.length - 1 : prevImage - 1
+    );
   };
   const handleNext = () => {
-    setCurrentImage((prevImage) => (prevImage === data.length - 1 ? 0 : prevImage + 1));
+    setCurrentImage((prevImage) =>
+      prevImage === data.length - 1 ? 0 : prevImage + 1
+    );
   };
-  
+
   return (
     <div className="imageCarousel">
       <div className="testHeadContainer1">
@@ -155,7 +157,6 @@ const ImageCarousel = ({ images }) => {
       </div>
     </div>
   );
-  
 };
 
 export default ImageCarousel;

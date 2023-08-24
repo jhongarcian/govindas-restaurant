@@ -3,25 +3,28 @@
 @font-face {
   font-family: "Caviar Dreams Bold";
   src: local("Caviar-Dreams"),
-  url("../assets/fonts/Caviar-Dreams/Caviar_Dreams_Bold.ttf") format("truetype");
+    url("../assets/fonts/Caviar-Dreams/Caviar_Dreams_Bold.ttf")
+      format("truetype");
 }
 
 @font-face {
   font-family: "Caviar Dreams Bold Italic";
-  src: local("Caviar-Dreams"), 
-  url("../assets/fonts/Caviar-Dreams/CaviarDreams_BoldItalic.ttf") format("truetype")
+  src: local("Caviar-Dreams"),
+    url("../assets/fonts/Caviar-Dreams/CaviarDreams_BoldItalic.ttf")
+      format("truetype");
 }
 
 @font-face {
   font-family: "Caviar Dreams Italic";
   src: local("Caviar-Dreams"),
-  url("../assets/fonts/Caviar-Dreams/CaviarDreams_Italic.ttf") format("truetype")
+    url("../assets/fonts/Caviar-Dreams/CaviarDreams_Italic.ttf")
+      format("truetype");
 }
 
 @font-face {
   font-family: "Caviar Dreams";
   src: local("Caviar-Dreams"),
-  url("../assets/fonts/Caviar-Dreams/CaviarDreams.ttf") format("truetype")
+    url("../assets/fonts/Caviar-Dreams/CaviarDreams.ttf") format("truetype");
 }
 
 /* Metropolis Font */
@@ -29,7 +32,8 @@
 @font-face {
   font-family: "Metropolis 1920";
   src: local("Metropolis 1920"),
-  url("../assets/fonts/METROPOLIS 1920/Metropolis 1920.otf") format("truetype")
+    url("../assets/fonts/METROPOLIS 1920/Metropolis 1920.otf")
+      format("truetype");
 }
 
 /* Josefin-Sans Font */
@@ -37,7 +41,8 @@
 @font-face {
   font-family: "Josefin-Sans-regular";
   src: local("Josefin-Sans"),
-  url("../assets/fonts/Josefin_Sans/static/JosefinSans-Regular.ttf") format("truetype")
+    url("../assets/fonts/Josefin_Sans/static/JosefinSans-Regular.ttf")
+      format("truetype");
 }
 
 /* Open Sans Condensed */
@@ -45,19 +50,20 @@
 @font-face {
   font-family: "Open-Sans-Condensed";
   src: local("Open-Sans-Condensed"),
-  url("../assets/fonts/open-sans-condensed/OpenSans-CondLight.ttf") format("truetype")
+    url("../assets/fonts/open-sans-condensed/OpenSans-CondLight.ttf")
+      format("truetype");
 }
 
 @font-face {
   font-family: "Open-Sans-Condensed";
   src: local("Open-Sans-Condensed-Bold"),
-  url("../assets/fonts/open-sans-condensed/OpenSans-CondBold.ttf")
+    url("../assets/fonts/open-sans-condensed/OpenSans-CondBold.ttf");
 }
 
-@font-face { 
+@font-face {
   font-family: "Open-Sans-Condensed-Italic";
   src: local("Open-Sans-Condensed-LigthItalic"),
-  url("../assets/fonts/open-sans-condensed/OpenSans-CondLightItalic.ttf")
+    url("../assets/fonts/open-sans-condensed/OpenSans-CondLightItalic.ttf");
 }
 
 /* body, html */
@@ -67,25 +73,25 @@
 @font-face {
   font-family: "Caviar Dreams Bold";
   src: local("Caviar-Dreams"),
-  ("/fonts/Caviar-Dreams/Caviar_Dreams_Bold.ttf") format("truetype");
+    ("/fonts/Caviar-Dreams/Caviar_Dreams_Bold.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "Caviar Dreams Bold Italic";
-  src: local("Caviar-Dreams"), 
-  url("/fonts/Caviar-Dreams/CaviarDreams_BoldItalic.ttf") format("truetype")
+  src: local("Caviar-Dreams"),
+    url("/fonts/Caviar-Dreams/CaviarDreams_BoldItalic.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "Caviar Dreams Italic";
   src: local("Caviar-Dreams"),
-  url("/fonts/Caviar-Dreams/CaviarDreams_Italic.ttf") format("truetype")
+    url("/fonts/Caviar-Dreams/CaviarDreams_Italic.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "Caviar Dreams";
   src: local("Caviar-Dreams"),
-  url("/fonts/Caviar-Dreams/CaviarDreams.ttf") format("truetype")
+    url("/fonts/Caviar-Dreams/CaviarDreams.ttf") format("truetype");
 }
 
 /* Metropolis Font */
@@ -93,7 +99,7 @@
 @font-face {
   font-family: "Metropolis 1920";
   src: local("Metropolis 1920"),
-  url("/fonts/METROPOLIS 1920/Metropolis 1920.otf") format("truetype")
+    url("/fonts/METROPOLIS 1920/Metropolis 1920.otf") format("truetype");
 }
 
 /* Josefin-Sans Font */
@@ -101,7 +107,7 @@
 @font-face {
   font-family: "Josefin-Sans-regular";
   src: local("Josefin-Sans"),
-  url("/fonts/Josefin_Sans/static/JosefinSans-Regular.ttf") format("truetype")
+    url("/fonts/Josefin_Sans/static/JosefinSans-Regular.ttf") format("truetype");
 }
 
 /* Open Sans Condensed */
@@ -109,19 +115,19 @@
 @font-face {
   font-family: "Open-Sans-Condensed";
   src: local("Open-Sans-Condensed"),
-  url("/fonts/open-sans-condensed/OpenSans-CondLight.ttf") format("truetype")
+    url("/fonts/open-sans-condensed/OpenSans-CondLight.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "Open-Sans-Condensed";
   src: local("Open-Sans-Condensed-Bold"),
-  url("/fonts/open-sans-condensed/OpenSans-CondBold.ttf")
+    url("/fonts/open-sans-condensed/OpenSans-CondBold.ttf");
 }
 
-@font-face { 
+@font-face {
   font-family: "Open-Sans-Condensed-Italic";
   src: local("Open-Sans-Condensed-LigthItalic"),
-  url("/fonts/open-sans-condensed/OpenSans-CondLightItalic.ttf")
+    url("/fonts/open-sans-condensed/OpenSans-CondLightItalic.ttf");
 }
 
 /* body, html */
@@ -137,19 +143,19 @@
 @font-face {
   font-family: "Caviar Dreams Bold Italic";
   src: local("Caviar-Dreams"),
-    url("/fonts/Caviar-Dreams/CaviarDreams_BoldItalic.ttf") format("truetype")
+    url("/fonts/Caviar-Dreams/CaviarDreams_BoldItalic.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "Caviar Dreams Italic";
   src: local("Caviar-Dreams"),
-    url("/fonts/Caviar-Dreams/CaviarDreams_Italic.ttf") format("truetype")
+    url("/fonts/Caviar-Dreams/CaviarDreams_Italic.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "Caviar Dreams";
   src: local("Caviar-Dreams"),
-    url("/fonts/Caviar-Dreams/CaviarDreams.ttf") format("truetype")
+    url("/fonts/Caviar-Dreams/CaviarDreams.ttf") format("truetype");
 }
 
 /* Metropolis Font */
@@ -157,7 +163,7 @@
 @font-face {
   font-family: "Metropolis 1920";
   src: local("Metropolis 1920"),
-    url("/fonts/METROPOLIS 1920/Metropolis 1920.otf") format("truetype")
+    url("/fonts/METROPOLIS 1920/Metropolis 1920.otf") format("truetype");
 }
 
 /* Josefin-Sans Font */
@@ -165,7 +171,7 @@
 @font-face {
   font-family: "Josefin-Sans-regular";
   src: local("Josefin-Sans"),
-    url("/fonts/Josefin_Sans/static/JosefinSans-Regular.ttf") format("truetype")
+    url("/fonts/Josefin_Sans/static/JosefinSans-Regular.ttf") format("truetype");
 }
 
 /* Open Sans Condensed */
@@ -173,19 +179,19 @@
 @font-face {
   font-family: "Open-Sans-Condensed";
   src: local("Open-Sans-Condensed"),
-    url("/fonts/open-sans-condensed/OpenSans-CondLight.ttf") format("truetype")
+    url("/fonts/open-sans-condensed/OpenSans-CondLight.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "Open-Sans-Condensed";
   src: local("Open-Sans-Condensed-Bold"),
-    url("/fonts/open-sans-condensed/OpenSans-CondBold.ttf")
+    url("/fonts/open-sans-condensed/OpenSans-CondBold.ttf");
 }
 
 @font-face {
   font-family: "Open-Sans-Condensed-Italic";
   src: local("Open-Sans-Condensed-LigthItalic"),
-    url("/fonts/open-sans-condensed/OpenSans-CondLightItalic.ttf")
+    url("/fonts/open-sans-condensed/OpenSans-CondLightItalic.ttf");
 }
 body,
 html {
@@ -237,7 +243,6 @@ header {
   margin: 0 0 0 16px;
 }
 
-
 li .active {
   color: #d0af3d;
 }
@@ -254,7 +259,7 @@ li .active {
   height: 950px;
   overflow: hidden;
   position: relative;
-  Background-color: black;
+  background-color: black;
   opacity: 0.95;
   background-image: url("blacklogo.png");
   background-repeat: no-repeat;
@@ -268,8 +273,8 @@ li .active {
   font-size: 30px;
   color: white;
   font-family: "Josefin-Sans-regular";
-  font-weight:400;
-  text-align:center;
+  font-weight: 400;
+  text-align: center;
   white-space: nowrap;
   color: #d0af3d;
 }
@@ -295,8 +300,6 @@ li .active {
   font-family: "Caviar Dreams Bold";
   font-size: 55px;
   font-weight: 700px;
-  
-
 }
 
 .testTitle2 {
@@ -307,7 +310,6 @@ li .active {
   font-weight: 400;
   text-align: center;
   white-space: nowrap;
-
 }
 
 .openquote {
@@ -324,13 +326,13 @@ li .active {
 }
 
 .closequote {
-    flex: 0.25;  
-    height: 21px;
-    width: 25px;
-    padding: 2px;
-    position: end;
-    /* position: relative; */
-    /* position: absolute;
+  flex: 0.25;
+  height: 21px;
+  width: 25px;
+  padding: 2px;
+  position: end;
+  /* position: relative; */
+  /* position: absolute;
     right: 650px; */
 }
 .lineDeco {
@@ -343,7 +345,7 @@ li .active {
   /* flex-direction: column; */
   /* justify-content: center; */
   align-items: center;
-  width: 100%; 
+  width: 100%;
   /* column-gap: 1px; */
   /* flex-wrap: wrap; */
   /* padding: 35px; */
@@ -364,7 +366,6 @@ li .active {
   /* flex: 20; */
   flex-direction: column;
   width: 650px;
-  
 }
 .imageContainer {
   display: flex;
@@ -383,7 +384,6 @@ li .active {
   max-width: 750px;
   height: 10px;
   /* margin: 0 auto; */
-  
 }
 
 .image-pic {
@@ -393,7 +393,6 @@ li .active {
   align-self: center;
   /* margin-left: 38%; */
   justify-content: center;
-  
 }
 
 .quotes {
@@ -422,28 +421,27 @@ li .active {
   column-gap: 20px;
   row-gap: 10px;
   color: white;
-  }
+}
 
-  .button1 {
-    background-color: transparent;
-    border: 2px solid white;
-    border-radius: 25px;
-    font-size: 22px;
-    font-family: "Caviar Dreams Bold";
-    padding:2px  40px;
-    color: white;
-  }
+.button1 {
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 25px;
+  font-size: 22px;
+  font-family: "Caviar Dreams Bold";
+  padding: 2px 40px;
+  color: white;
+}
 
-    .button2 {
-      background-color: transparent;
-      border: 2px solid white;
-      border-radius: 25px;
-      font-size: 22px;
-      font-family: "Caviar Dreams Bold";
-      padding: 2px 40px;
-      color: white;
-    }
+.button2 {
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 25px;
+  font-size: 22px;
+  font-family: "Caviar Dreams Bold";
+  padding: 2px 40px;
+  color: white;
+}
 li .active {
   color: #d0af3d;
 }
-

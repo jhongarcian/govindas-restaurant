@@ -1,5 +1,5 @@
 {
-  "name": "capstone",
+  "name": "govindas-restaurant",
   "version": "1.0.0",
   "description": "��#\u0000 \u0000C\u0000a\u0000p\u0000s\u0000t\u0000o\u0000n\u0000e\u0000\r\u0000 \u0000",
   "main": "server.js",
@@ -22,17 +22,9 @@
     "start": "node server.js",
     "dev": "nodemon server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Henryesc/Capstone.git"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Henryesc/Capstone/issues"
-  },
-  "homepage": "https://github.com/Henryesc/Capstone#readme",
   "devDependencies": {
     "nodemon": "^2.0.22"
   }

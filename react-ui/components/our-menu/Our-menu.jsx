@@ -33,7 +33,7 @@ const OurMenu = () => {
     specialMenuList &&
     specialMenuList.length &&
     specialMenuList.map((item) => {
-      return <EventsStyle key={item} >{item}</EventsStyle>;
+      return <EventsStyle key={item}>{item}</EventsStyle>;
     });
 
   return (

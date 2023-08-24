@@ -17,7 +17,7 @@ const GiftCards = () => {
   const [buyerPhone, setBuyerPhone] = useState("");
   const [comment, setComment] = useState("");
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  const [stripeUrl, setStripeUrl] = useState("")
+  const [stripeUrl, setStripeUrl] = useState("");
   const location = useLocation();
 
   const handleWindowResize = () => {
@@ -30,11 +30,11 @@ const GiftCards = () => {
   }, []);
 
   useEffect(() => {
-    if(stripeUrl && stripeUrl.length) {
-      window.location.replace(stripeUrl)
+    if (stripeUrl && stripeUrl.length) {
+      window.location.replace(stripeUrl);
     }
-    return () => setStripeUrl("")
-  }, [stripeUrl])
+    return () => setStripeUrl("");
+  }, [stripeUrl]);
 
   const handleChange = (setState) => (e) => {
     setState(e.target.value);
@@ -76,10 +76,10 @@ const GiftCards = () => {
         "https://govindasbackend.vercel.app/buy-gift-card",
         options
       );
-      if(response.ok) {
+      if (response.ok) {
         const data = await response.json();
-        const {url} = data;
-        url && url.length && setStripeUrl(url)
+        const { url } = data;
+        url && url.length && setStripeUrl(url);
       }
     } catch (error) {
       console.log(error);
@@ -290,7 +290,6 @@ const Gift = styled.section`
       width: 100%;
       position: sticky;
       top: 0;
-      
     }
   }
   .info-container {

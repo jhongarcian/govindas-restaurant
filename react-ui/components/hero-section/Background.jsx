@@ -134,7 +134,7 @@ const ParagraphText = () => {
 };
 
 const CallActionButton = styled.button`
-font-family: "Open-Sans-Condensed";
+  font-family: "Open-Sans-Condensed";
   border: 1px solid #d0af3d;
   padding: 18px 24px;
   color: #fff;

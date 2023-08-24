@@ -10,19 +10,18 @@ const {giftCardsRouter, sessionIdRetrieves, today_menu, insertReview} = require(
 
 
 server.use(cors({
-    origin: ["http://localhost:5173", "https://govindas.vercel.app/", "https://capstone-henryesc.vercel.app/",  "*"],
+    origin: ["http://localhost:5173", "*"],
     methods: ["GET", "POST", "DELETE", 'UPDATE','PUT','PATCH'],
     credentials: true
 }));
 server.use(express.json());
 server.use(cookieParser());
 
-server.get('/heartbeat', (req, res) => {
+server.get('/api/heartbeat', (req, res) => {
     res.json({
-        "message": "Heartbeat"
+        "is": "working"
     });
 });
-
 server.post("/gift-card", async (req, res) => {
     const inputFields = req.body;
     console.log(inputFields)
