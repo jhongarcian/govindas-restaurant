@@ -73,7 +73,7 @@ const GiftCards = () => {
         body: JSON.stringify(inputFields),
       };
       const response = await fetch(
-        "https://govindasbackend.vercel.app/buy-gift-card",
+        "http://localhost:8080/buy-gift-card",
         options
       );
       if (response.ok) {
