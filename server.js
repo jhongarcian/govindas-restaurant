@@ -4,6 +4,7 @@ const server = express();
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const PORT = process.env.PORT || 3030;
+const path = require("path");
 
 const {giftCardsRouter, sessionIdRetrieves, today_menu, insertReview} = require("./routes");
 
@@ -16,6 +17,11 @@ server.use(cors({
 }));
 server.use(express.json());
 server.use(cookieParser());
+server.use(express.static(path.resolve(`${__dirname}/react-ui`)));
+
+server.get('*', (req, res) => {
+    res.sendFile(path.resolve(`${__dirname}/react-ui/index.html`));
+});
 
 server.get('/api/heartbeat', (req, res) => {
     res.json({
