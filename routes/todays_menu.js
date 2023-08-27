@@ -73,9 +73,11 @@ router.post("/upload", upload.single("image"), async (req, res) => {
 
 router.get("/today-menu", async (req, res) => {
     try {   
-        const menuData = await getTodayMenuData()
+        const menuData = await getTodayMenuData();
+        
         if(menuData) {
-            res.json({menu: menuData});
+            const menuList = Object.values(menuData)
+            res.json(menuList);
         } else {
             res.status(404).json({ error: "Menu data not found" });
         }
