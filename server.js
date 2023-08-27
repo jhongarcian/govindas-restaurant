@@ -17,17 +17,13 @@ server.use(cors({
 }));
 server.use(express.json());
 server.use(cookieParser());
-server.use(express.static(path.resolve(`${__dirname}/react-ui`)));
-
-server.get('*', (req, res) => {
-    res.sendFile(path.resolve(`${__dirname}/react-ui/index.html`));
-});
 
 server.get('/api/heartbeat', (req, res) => {
     res.json({
         "is": "working"
     });
 });
+
 server.post("/gift-card", async (req, res) => {
     const inputFields = req.body;
     console.log(inputFields)
