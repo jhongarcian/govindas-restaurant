@@ -1,65 +1,83 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import FoodCard from "./FoodCard";
 import "../../src/App.css";
 import Title from "../title/Title";
+import { useSelector } from "react-redux";
+import { selectedMenu } from "../../features/todays_menuSlice";
 
 const TodaysMenu = () => {
-  // We need to bring the date from the post
+  const [title, setTitle] = useState("");
+  const [date, setDate] = useState("");
+  const [leftMenu, setLeftMenu] = useState([]);
+  const [rigthMenu, setRigthMenu] = useState([]);
+
+  const menu_data = useSelector(selectedMenu);
+
+  useEffect(() => {
+    if (menu_data && menu_data.length) {
+      const menu_list = menu_data.slice(2);
+      const { firstHalf, secondHalf } = splitMenuList(menu_list);
+      setLeftMenu(firstHalf);
+      setRigthMenu(secondHalf);
+      setTitle(menu_data[0]);
+      setDate(menu_data[1]);
+    }
+
+    return () => {
+      setTitle("");
+      setDate("");
+      setLeftMenu([]);
+      setRigthMenu([]);
+    };
+  }, [menu_data]);
+
+  const rightContainer =
+    rigthMenu &&
+    rigthMenu.length &&
+    rigthMenu.map((item) => {
+      return <FoodCard key={item} text={item} />;
+    });
+
+  const leftContainer = 
+  leftMenu &&
+  leftMenu.length &&
+  leftMenu.map(item => {
+    return <FoodCard key={item} text={item}/>
+  })
+
+  const splitMenuList = (menu) => {
+    const midPoint = Math.floor(menu.length / 2);
+    const firstHalf = menu.slice(0, midPoint);
+    const secondHalf = menu.slice(midPoint);
+
+    return { firstHalf, secondHalf };
+  };
+
   return (
     <MenuContainer>
       <MenuWrapper>
         <FoodAndInfoContainer>
           <Title
             title={"TODAY’S MENU"}
-            info={"May 31, Wednesday"}
-            subtitle={
-              "Every time you perfectly dine with us, it should happy for great inspired food in an environment designed with individual touches unique to the local area"
-            }
+            info={date && date.length && date}
+            subtitle={title && title.length && title}
           />
           <FoodContainer>
             <LeftSection>
-              <FoodCard
-                text={"Basmati Rice VGF"}
-                image={"/Rectangle 34624172.png"}
-                imageInfo={"Basmati Rice"}
-              />
-              <FoodCard
-                text={"Dal Fry VGF"}
-                image={"/Rectangle 34624173.png"}
-                imageInfo={"Dal fry"}
-              />
-              <FoodCard
+              {menu_data && menu_data.length && leftContainer}
+              {/* <FoodCard
                 text={"Basmati Rice VGF"}
                 image={"/Rectangle 34624172.png"}
                 imageInfo={"Basmati Rice VGF"}
-              />
-              <FoodCard
-                text={"Basmati Rice VGF"}
-                image={"/Rectangle 34624172.png"}
-                imageInfo={"Basmati Rice VGF"}
-              />
+              /> */}
             </LeftSection>
             <MiddleSection>
               <CircleVector src="/Vector.png" alt="main dish vector" />
               <MiddleDish src="/pexels-monica-turlui-7218637.png" alt="" />
             </MiddleSection>
             <RightSection>
-              <FoodCard
-                text={"Basmati Rice VGF"}
-                image={"/Rectangle 34624172.png"}
-                imageInfo={"Basmati Rice VGF"}
-              />
-              <FoodCard
-                text={"Basmati Rice VGF"}
-                image={"/Rectangle 34624172.png"}
-                imageInfo={"Basmati Rice VGF"}
-              />
-              <FoodCard
-                text={"Basmati Rice VGF"}
-                image={"/Rectangle 34624172.png"}
-                imageInfo={"Basmati Rice VGF"}
-              />
+              {menu_data && menu_data.length && rightContainer}
             </RightSection>
           </FoodContainer>
           <MenuTextContainer>
