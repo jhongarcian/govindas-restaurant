@@ -11,13 +11,28 @@ const TodaysMenu = () => {
   const [date, setDate] = useState("");
   const [leftMenu, setLeftMenu] = useState([]);
   const [rigthMenu, setRigthMenu] = useState([]);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [menu, setMenu] = useState([]);
 
   const menu_data = useSelector(selectedMenu);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   useEffect(() => {
     if (menu_data && menu_data.length) {
       const menu_list = menu_data.slice(2);
       const { firstHalf, secondHalf } = splitMenuList(menu_list);
+      setMenu(menu_list);
       setLeftMenu(firstHalf);
       setRigthMenu(secondHalf);
       setTitle(menu_data[0]);
@@ -32,6 +47,13 @@ const TodaysMenu = () => {
     };
   }, [menu_data]);
 
+  const fullMenu =
+    menu &&
+    menu.length &&
+    menu.map((item) => {
+      return <FoodCard key={item} text={item} />;
+    });
+
   const rightContainer =
     rigthMenu &&
     rigthMenu.length &&
@@ -39,12 +61,12 @@ const TodaysMenu = () => {
       return <FoodCard key={item} text={item} />;
     });
 
-  const leftContainer = 
-  leftMenu &&
-  leftMenu.length &&
-  leftMenu.map(item => {
-    return <FoodCard key={item} text={item}/>
-  })
+  const leftContainer =
+    leftMenu &&
+    leftMenu.length &&
+    leftMenu.map((item) => {
+      return <FoodCard key={item} text={item} />;
+    });
 
   const splitMenuList = (menu) => {
     const midPoint = Math.floor(menu.length / 2);
@@ -63,26 +85,32 @@ const TodaysMenu = () => {
             info={date && date.length && date}
             subtitle={title && title.length && title}
           />
-          <FoodContainer>
-            <LeftSection>
-              {menu_data && menu_data.length && leftContainer}
-              {/* <FoodCard
-                text={"Basmati Rice VGF"}
-                image={"/Rectangle 34624172.png"}
-                imageInfo={"Basmati Rice VGF"}
-              /> */}
-            </LeftSection>
-            <MiddleSection>
-              <CircleVector src="/Vector.png" alt="main dish vector" />
-              <MiddleDish src="/pexels-monica-turlui-7218637.png" alt="" />
-            </MiddleSection>
-            <RightSection>
-              {menu_data && menu_data.length && rightContainer}
-            </RightSection>
+          <FoodContainer $size={windowWidth}>
+            {windowWidth >= 768 ? (
+              <>
+                <LeftSection $size={windowWidth}>
+                  {menu_data && menu_data.length && leftContainer}
+                </LeftSection>
+                <MiddleSection $size={windowWidth}>
+                  <CircleVector src="/Vector.png" alt="main dish vector" />
+                  <MiddleDish src="/pexels-monica-turlui-7218637.png" alt="" />
+                </MiddleSection>
+                <RightSection $size={windowWidth}>
+                  {menu_data && menu_data.length && rightContainer}
+                </RightSection>
+              </>
+            ) : (
+              <>
+                <MiddleSection>
+                  <CircleVector src="/Vector.png" alt="main dish vector" />
+                  <MiddleDish src="/pexels-monica-turlui-7218637.png" alt="" />
+                </MiddleSection>
+                <FullMenuContainer>{fullMenu}</FullMenuContainer>
+              </>
+            )}
           </FoodContainer>
-          <MenuTextContainer>
+          <MenuTextContainer $size={windowWidth}>
             <MenuTime>*Wednesday, Friday & Sunday 100% Vegan Menu</MenuTime>
-            <MenuTimeSeparator />
             <MenuTimeSocials>
               <MenuTimeText>Follow us on Twitter:</MenuTimeText>
               <MenuTimeTextYellow>@GovindashouM</MenuTimeTextYellow>
@@ -97,7 +125,6 @@ const TodaysMenu = () => {
 export default TodaysMenu;
 
 const MenuContainer = styled.section`
-  height: 1229px;
   width: 100%;
   display: flex;
   flex-shrink: 0;
@@ -106,6 +133,7 @@ const MenuContainer = styled.section`
 
 const MenuWrapper = styled.div`
   width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
 `;
@@ -115,21 +143,36 @@ const FoodAndInfoContainer = styled.div`
   flex-direction: column;
   text-align: center;
   flex: 1;
-  padding-top: 3%;
+  padding: 24px 0;
 `;
 
 const FoodContainer = styled.div`
   display: flex;
-  flex: 1;
+  flex-direction: ${(props) => (props.$size >= 768 ? "row;" : "column;")};
   align-items: center;
+  padding-bottom: 24px ;
+  flex-wrap: wrap;
 `;
+
+const FullMenuContainer = styled.div`
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+`;
+
 const LeftSection = styled.div`
-  height: 100%;
+  gap: 24px;
   display: flex;
   flex: 1;
   flex-direction: column;
   justify-content: space-evenly;
-  align-items: center;
+  align-items: ${(props) => (props.$size >= 768 ? "flex-end;" : "center;")};
+  width: 100%;
+  padding: 24px 0;
 `;
 
 const MiddleSection = styled.div`
@@ -137,18 +180,19 @@ const MiddleSection = styled.div`
   justify-content: center;
   position: relative;
   padding: 2% 2% 2% 2%;
+  ${(props) => props.$size <= 768 && "order: -1;"};
 `;
 
 const CircleVector = styled.img`
-  width: 452px;
-  height: 452px;
+  width: 200px;
+  height: 200px;
   flex-shrink: 0;
   z-index: 1;
 `;
 
 const MiddleDish = styled.img`
-  width: 408px;
-  height: 408px;
+  width: 180px;
+  height: 180px;
   flex-shrink: 0;
   position: absolute;
   top: 50%;
@@ -158,23 +202,32 @@ const MiddleDish = styled.img`
 `;
 
 const RightSection = styled.div`
-  height: 100%;
+  gap: 24px;
   display: flex;
   flex: 1;
   flex-direction: column;
   justify-content: space-evenly;
-  align-items: center;
+  align-items: ${(props) => (props.$size >= 768 ? "flex-start;" : "center;")};
+  width: 100%;
+  padding: 24px 0;
 `;
 
 const MenuTextContainer = styled.div`
+  width: ${(props) => (props.$size >= 768 ? "60%;" : "100%;")};
   display: flex;
-  justify-content: center;
-  column-gap: 2%;
-  height: 10%;
+  flex-direction: column;
+  justify-content: flex-end;
+  column-gap: 10px;
   align-items: center;
+  margin: 0 auto;
+  gap: 14px;
 `;
 
 const MenuTime = styled.span`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
   color: #000;
   text-align: center;
   font-family: "Josefin Sans";
@@ -182,23 +235,19 @@ const MenuTime = styled.span`
   font-style: normal;
   font-weight: 500;
   line-height: normal;
-`;
-
-const MenuTimeSeparator = styled.span`
-  width: 1px;
-  height: 20px;
-  background: #000;
 `;
 
 const MenuTimeSocials = styled.div`
   display: flex;
+  justify-content: center;
+  align-items: center;
   color: #000;
-  text-align: center;
   font-family: "Josefin Sans";
   font-size: 25px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+  width: 90%;
 `;
 
 const MenuTimeText = styled.span`
