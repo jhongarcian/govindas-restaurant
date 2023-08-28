@@ -1,10 +1,9 @@
 import { styled } from "styled-components";
 
-const FoodCard = ({ text, image, imageInfo }) => {
+const FoodCard = ({ text, side }) => {
   return (
-    <CardContainer>
-      <Card>
-        <Image src={image} alt={imageInfo} />
+    <CardContainer >
+      <Card $view={side}>
         <Text>{text}</Text>
       </Card>
     </CardContainer>
@@ -13,7 +12,7 @@ const FoodCard = ({ text, image, imageInfo }) => {
 export default FoodCard;
 
 const CardContainer = styled.div`
-  width: 100%;
+  width: 40%;
   max-width: 300px;
 `;
 
@@ -23,12 +22,16 @@ const Card = styled.div`
   justify-content: space-around;
   align-items: center;
   border-radius: 30px;
+  border: 1px solid #F1E6E3;
   background: #fff;
-  box-shadow: 0px 35px 90px 0px rgba(157, 165, 175, 0.48);
   width: 100%;
-  height: 120px;
+  height: 50px;
   padding: 14px;
   gap: 14px;
+  &:hover {
+    border: none;
+    box-shadow: 0px 35px 90px 0px rgba(157, 165, 175, 0.48);
+  }
 `;
 
 const Image = styled.img`
