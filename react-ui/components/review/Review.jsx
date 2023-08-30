@@ -5,7 +5,7 @@ import "../../src/App.css";
 const LeaveReviews = () => {
   const [name, setName] = useState("");
   const [comment, setComment] = useState("");
-  const [rating, setRating] = useState(5);
+  const [rating, setRating] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -28,7 +28,7 @@ const LeaveReviews = () => {
       const data = await response.json();
       setName("");
       setComment("");
-      setRating(5);
+      setRating("");
       return data;
     } catch (error) {
       console.log(error);
