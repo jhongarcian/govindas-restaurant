@@ -20,18 +20,10 @@ const storeInputData = async (data) => {
 };
 
 const postReview = async (name, rating, comment) => {
-    try {
-        const result = await db.none(`
-            INSERT INTO reviews (name, rating, comment)
-            VALUES ($1, $2, $3)
-        `, [name, rating, comment]);
-
-        res.status(200).json({message: "Review added successfully"});
-        return result.id
-    } catch (err) {
-        console.error("Error,", err);
-        res.status(500).json({error: "Something went wrong"});
-    }
+    await db.none(`
+        INSERT INTO reviews (name, rating, comment)
+        VALUES ($1, $2, $3)
+    `, [name, rating, comment]);
 };
 
 const deletePreviousMenuData = async (menuId) => {
