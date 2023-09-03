@@ -12,6 +12,7 @@ const LeaveReviews = () => {
     comment: false,
     rating: false,
   });
+  const [isSubmitted, setIsSubmitted] = useState(false)
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -40,11 +41,14 @@ const LeaveReviews = () => {
           name: name,
         }),
       });
-      const data = await response.json();
-      setName("");
-      setComment("");
-      setRating("");
-      return data;
+      if (response.ok) {
+        const data = await response.json();
+        setName("");
+        setComment("");
+        setRating("");
+        setIsSubmitted(true)
+        return data;
+      }
     } catch (error) {
       console.log(error);
     }
@@ -78,7 +82,7 @@ const LeaveReviews = () => {
       <FormContainer>
         <Title>Leave a review</Title>
         <SubTitle>We'd Love to hear your Feedback</SubTitle>
-        <ReviewStars action={handleClick} />
+        <ReviewStars action={handleClick} submitted={isSubmitted} />
 
         <InputContainer>
           <LabelContainer>
@@ -90,6 +94,7 @@ const LeaveReviews = () => {
               type="text"
               onChange={handleChange(setName)}
               onKeyUp={handleKeyup}
+              name="fname"
             />
           </LabelContainer>
           <LabelContainer>
