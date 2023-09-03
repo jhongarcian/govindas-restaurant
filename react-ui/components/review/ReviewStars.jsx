@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { styled } from "styled-components";
 
-const ReviewStars = ({ action }) => {
+const ReviewStars = ({ action, submitted }) => {
   const [starData, setStarData] = useState([
     {
       rating: 1,
@@ -24,6 +24,33 @@ const ReviewStars = ({ action }) => {
       isActive: false,
     },
   ]);
+
+  useEffect(() => {
+    if (submitted) {
+      setStarData([
+        {
+          rating: 1,
+          isActive: false,
+        },
+        {
+          rating: 2,
+          isActive: false,
+        },
+        {
+          rating: 3,
+          isActive: false,
+        },
+        {
+          rating: 4,
+          isActive: false,
+        },
+        {
+          rating: 5,
+          isActive: false,
+        },
+      ]);
+    }
+  }, [submitted]);
 
   const [score, setScore] = useState(0);
 
