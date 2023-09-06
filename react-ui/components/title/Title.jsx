@@ -2,13 +2,13 @@ import { styled } from "styled-components";
 import "../../src/App.css";
 import image from "/vectors/vector-title.svg";
 
-const Title = ({ title, info, subtitle }) => {
+const Title = ({ title, info, subtitle, white_color }) => {
   return (
     <TitleContainer>
       <SectionInfoText text={info} />
       <TitleWrapper>
         <Graphic src={image} />
-        <SectionTitleText text={title} />
+        <SectionTitleText text={title} textColor={white_color} />
         <Graphic src={image} />
       </TitleWrapper>
       <SectionSubtitleText text={subtitle} />
@@ -41,7 +41,7 @@ const SectionInfoStyle = styled.h2`
 `;
 
 const SectionInfoText = ({ text }) => {
-  return <SectionInfoStyle>{text}</SectionInfoStyle>;
+  return <SectionInfoStyle >{text}</SectionInfoStyle>;
 };
 
 const TitleWrapper = styled.div`
@@ -55,7 +55,7 @@ const TitleWrapper = styled.div`
 `;
 
 const SectionTitleStyle = styled.h1`
-  color: #000;
+  color: ${(props) => (props.$fontColor === "white" ? "#fff" : "#000")};
   font-family: "Caviar Dreams Bold";
   font-size: 30px;
   font-style: normal;
@@ -69,8 +69,8 @@ const SectionTitleStyle = styled.h1`
   }
 `;
 
-const SectionTitleText = ({ text }) => {
-  return <SectionTitleStyle>{text}</SectionTitleStyle>;
+const SectionTitleText = ({ text, textColor }) => {
+  return <SectionTitleStyle $fontColor={textColor}>{text}</SectionTitleStyle>;
 };
 
 const Graphic = styled.img`

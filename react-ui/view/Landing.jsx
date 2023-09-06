@@ -1,6 +1,5 @@
 import React from "react";
-import ImageCarousel from "../components/Testimonials";
-import { AboutUs, Background, OurMenu, CateringRequest} from "../components"
+import { AboutUs, Background, OurMenu, CateringRequest, Testimonials} from "../components"
 import LeaveReviews from "../components/review/Review"
 import OrderRedirect from "../components/order+pay/order+pay"
 import GiftCards from "../components/gifts/gift-cards"
@@ -14,7 +13,7 @@ const Landing = () => {
       <Background />
       <AboutUs />
       <OurMenu />
-      <ImageCarousel />
+      <Testimonials />
       <LeaveReviews />
       <TodaysMenu/>
       <CateringRequest />
