@@ -9,7 +9,8 @@ import FoodCard from "./todaysmenu/FoodCard";
 import PostMenu from "./todaysmenu/PostMenu";
 import Contact from "./contact us/contact";
 import ReviewStars from "./review/ReviewStars";
-import Testimonials from "./testimonials/Testimonials"
+import Testimonials from "./testimonials/Testimonials";
+import ClientText from "./testimonials/ClientText";
 
 
-export { Background, AboutUs, Cards, Title, OurMenu, MenuPrice, CateringRequest, FoodCard, PostMenu, Contact, ReviewStars, Testimonials };
+export { Background, AboutUs, Cards, Title, OurMenu, MenuPrice, CateringRequest, FoodCard, PostMenu, Contact, ReviewStars, Testimonials, ClientText };
