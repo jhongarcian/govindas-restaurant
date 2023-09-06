@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { styled } from "styled-components";
-import { Title } from "../index";
+import { Title, ClientText } from "../index";
 
 const data = [
   {
@@ -71,6 +71,11 @@ const ImageCarousel = ({ images }) => {
           title={"our clients say"}
           white_color={"white"}
         />
+        <ClientText name={"John"} comment={"Hello World"} rating={3} />
+        <ButtonContainer>
+          <Button onClick={handlePrev}>Prev</Button>
+          <Button onClick={handleNext}>Next</Button>
+        </ButtonContainer>
       </TestimonialContainer>
     </Container>
   );
@@ -80,6 +85,7 @@ export default ImageCarousel;
 
 const Container = styled.section`
   width: 100%;
+  height: 100%;
   background-color: black;
   opacity: 0.95;
   background-image: url("blacklogo.png");
@@ -90,11 +96,33 @@ const Container = styled.section`
 
 const TestimonialContainer = styled.div`
   width: 90%;
-  height: 100%;
+  height: auto;
   display: flex;
   flex-direction: column;
   gap: 24px;
   justify-content: center;
   align-content: center;
   margin: 0 auto;
+`;
+
+const ButtonContainer = styled.div`
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  gap: 24px;
+  color: #fff;
+`;
+
+const Button = styled.button`
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 25px;
+  font-size: 22px;
+  font-family: "Caviar Dreams Bold";
+  padding: 2px 40px;
+  color: white;
 `;
