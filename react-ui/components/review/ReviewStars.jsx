@@ -5,7 +5,7 @@ const ReviewStars = ({ action, submitted }) => {
   const [starData, setStarData] = useState([
     {
       rating: 1,
-      isActive: false,
+      isActive: true,
     },
     {
       rating: 2,
@@ -24,13 +24,15 @@ const ReviewStars = ({ action, submitted }) => {
       isActive: false,
     },
   ]);
+  const [score, setScore] = useState(1);
+  const [isHoveredStar, setIsHoveredStar] = useState(0);
 
   useEffect(() => {
     if (submitted) {
       setStarData([
         {
           rating: 1,
-          isActive: false,
+          isActive: true,
         },
         {
           rating: 2,
@@ -52,8 +54,6 @@ const ReviewStars = ({ action, submitted }) => {
     }
   }, [submitted]);
 
-  const [score, setScore] = useState(0);
-
   const handleClick = (e) => {
     const target = e.currentTarget.dataset.rating;
     const updatedStarData = starData.map((item) => ({
@@ -62,7 +62,15 @@ const ReviewStars = ({ action, submitted }) => {
     }));
     setStarData(updatedStarData);
     setScore(target * 1);
-    action(target);
+    action(score);
+  };
+
+  const handleMouseEnter = (rating) => {
+    setIsHoveredStar(rating);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHoveredStar(0);
   };
 
   const stars = starData.map((item) => {
@@ -72,12 +80,14 @@ const ReviewStars = ({ action, submitted }) => {
         onClick={handleClick}
         key={item.rating}
         data-rating={item.rating}
+        onMouseEnter={() => handleMouseEnter(item.rating)}
+        onMouseLeave={handleMouseLeave}
       >
         <Svg
           width="34px"
           height="34px"
           viewBox="0 0 24 24"
-          fill={item.isActive ? fillColor : "none"}
+          fill={item.rating <= (isHoveredStar || score) ? fillColor : "none"}
           xmlns="http://www.w3.org/2000/svg"
           stroke="#ffc800"
           transform="matrix(1, 0, 0, 1, 0, 0)rotate(0)"
@@ -117,6 +127,10 @@ const StarContainer = styled.div`
 const SingleStar = styled.div`
   width: fit-content;
   height: 100%;
+  &:hover {
+    transform: scale(1.1) translateY(-2px);
+    transition: transform 0.2s ease-in-out;
+  }
 `;
 
 const Svg = styled.svg`
