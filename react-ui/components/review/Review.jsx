@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { ReviewStars } from "../index";
 import styled from "styled-components";
+import { Title } from "../index";
 import "../../src/App.css";
 
 const LeaveReviews = () => {
@@ -12,7 +13,7 @@ const LeaveReviews = () => {
     comment: false,
     rating: false,
   });
-  const [isSubmitted, setIsSubmitted] = useState(false)
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -46,7 +47,7 @@ const LeaveReviews = () => {
         setName("");
         setComment("");
         setRating("");
-        setIsSubmitted(true)
+        setIsSubmitted(true);
         return data;
       }
     } catch (error) {
@@ -80,10 +81,12 @@ const LeaveReviews = () => {
       <LeafVector />
       <BowlVector />
       <FormContainer>
-        <Title>Leave a review</Title>
-        <SubTitle>We'd Love to hear your Feedback</SubTitle>
+        <Title
+          title={"Leave a reveiw"}
+          subtitle={"We'd Love to hear your Feedback"}
+          info={"Your opinion matters"}
+        />
         <ReviewStars action={handleClick} submitted={isSubmitted} />
-
         <InputContainer>
           <LabelContainer>
             <LabelText>name:</LabelText>
@@ -170,17 +173,6 @@ const FormContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-`;
-
-const Title = styled.h5`
-  color: #000;
-  font-family: Caviar Dreams;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  letter-spacing: 2.75px;
-  text-transform: uppercase;
 `;
 
 const SubTitle = styled.span`
