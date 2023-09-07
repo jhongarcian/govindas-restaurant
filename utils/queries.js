@@ -52,6 +52,12 @@ const getTodayMenuData = async () => {
       console.error("Error retrieving menu data:", error);
       throw error;
     }
+};
+
+const getReviewData = async () => {
+    const reviewQuery = "SELECT * FROM reviews ORDER BY id DESC LIMIT 10 ";
+    const data = await db.any(reviewQuery);
+    return data;
 }
 
-module.exports = { storeInputData, postReview, deletePreviousMenuData, getTodayMenuData };
+module.exports = { storeInputData, postReview, deletePreviousMenuData, getTodayMenuData, getReviewData };
