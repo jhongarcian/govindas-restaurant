@@ -7,13 +7,20 @@ import "../../src/App.css";
 const LeaveReviews = () => {
   const [name, setName] = useState("");
   const [comment, setComment] = useState("");
-  const [rating, setRating] = useState("");
+  const [rating, setRating] = useState(1);
+  const [ratingFeedBack, setRatingFeedBack] = useState(0);
   const [isInputEmpty, setIsInputEmpty] = useState({
     name: false,
     comment: false,
     rating: false,
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const reviewRespond = {
+    positive: "Thank you for your kind words!",
+    negative:
+      "We apologize that our service did not satisfy your expectations.",
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -46,7 +53,7 @@ const LeaveReviews = () => {
         const data = await response.json();
         setName("");
         setComment("");
-        setRating("");
+        setRating(0);
         setIsSubmitted(true);
         return data;
       }
@@ -57,6 +64,12 @@ const LeaveReviews = () => {
 
   const handleClick = (rating) => {
     setRating(rating);
+    setRatingFeedBack(rating);
+  };
+
+  const handleClickReturn = () => {
+    setRatingFeedBack(0);
+    setIsSubmitted(false);
   };
 
   const handleChange = (setState) => (e) => {
@@ -86,36 +99,55 @@ const LeaveReviews = () => {
           subtitle={"We'd Love to hear your Feedback"}
           info={"Your opinion matters"}
         />
-        <ReviewStars action={handleClick} submitted={isSubmitted} />
-        <InputContainer>
-          <LabelContainer>
-            <LabelText>name:</LabelText>
-            <Input
-              $isFilled={isInputEmpty.name}
-              placeholder="Your name"
-              value={name}
-              type="text"
-              onChange={handleChange(setName)}
-              onKeyUp={handleKeyup}
-              name="fname"
-            />
-          </LabelContainer>
-          <LabelContainer>
-            <LabelText>comment:</LabelText>
-            <CommentInput
-              $isFilled={isInputEmpty.comment}
-              placeholder="Say something about us"
-              value={comment}
-              type="text"
-              onChange={handleChange(setComment)}
-              onKeyUp={handleKeyup}
-            />
-          </LabelContainer>
-        </InputContainer>
-        <Discount>Get 10% off your next order when you leave a review</Discount>
-        <PostButton type="submit" onClick={handleSubmit}>
-          Post
-        </PostButton>
+        <FormWrapper>
+          {isSubmitted ? (
+            <>
+              <ThankYou>
+                {ratingFeedBack < 3
+                  ? reviewRespond.negative
+                  : reviewRespond.positive}
+              </ThankYou>
+              <Button onClick={handleClickReturn} type="button">
+                Exit
+              </Button>
+            </>
+          ) : (
+            <>
+              <ReviewStars action={handleClick} submitted={isSubmitted} />
+              <InputContainer>
+                <LabelContainer>
+                  <LabelText>name:</LabelText>
+                  <Input
+                    $isFilled={isInputEmpty.name}
+                    placeholder="Your name"
+                    value={name}
+                    type="text"
+                    onChange={handleChange(setName)}
+                    onKeyUp={handleKeyup}
+                    name="fname"
+                  />
+                </LabelContainer>
+                <LabelContainer>
+                  <LabelText>comment:</LabelText>
+                  <CommentInput
+                    $isFilled={isInputEmpty.comment}
+                    placeholder="Say something about us"
+                    value={comment}
+                    type="text"
+                    onChange={handleChange(setComment)}
+                    onKeyUp={handleKeyup}
+                  />
+                </LabelContainer>
+              </InputContainer>
+              <Discount>
+                Get 10% off your next order when you leave a review
+              </Discount>
+              <Button type="submit" onClick={handleSubmit}>
+                Post
+              </Button>
+            </>
+          )}
+        </FormWrapper>
       </FormContainer>
     </Container>
   );
@@ -177,7 +209,7 @@ const FormContainer = styled.div`
 
 const SubTitle = styled.span`
   color: #595555;
-  font-family: Josefin Sans;
+  font-family: "Josefin Sans";
   font-size: 18px;
   font-style: normal;
   font-weight: 500;
@@ -245,21 +277,44 @@ const Discount = styled.span`
   line-height: 40px;
 `;
 
-const PostButton = styled.button`
+const Button = styled.button`
   width: 120px;
-  height: 40px;
+  height: 34px;
   color: #fff;
   background: #d0af3d;
-  font-family: "Open Sans Condensed";
+  font-family: "Josefin Sans";
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
   letter-spacing: 2.2px;
   text-transform: uppercase;
-  border: none;
-  border-radius: 12px;
+  border: transparent;
+  border-radius: 14px;
   &:hover {
     background: #ad9332;
   }
+`;
+
+// After review
+
+const FormWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+  min-height: 316px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+const ThankYou = styled.h6`
+  color: #000;
+  text-align: center;
+  font-family: "Josefin Sans";
+  font-size: 34px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 24px;
 `;
