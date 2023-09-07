@@ -1,62 +1,29 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import { styled } from "styled-components";
 import { Title, ClientText } from "../index";
+import { useSelector } from "react-redux";
+import { selectedReviews } from "../../features/get_reviewsSlice";
 
-const data = [
-  {
-    name: "Shane LargeTummy",
-    quote: "I have never been so full in my life! My large tummy is happy.",
-    src: "/testimonials/shane-largetummy.png",
-    id: 1,
-  },
-  {
-    name: "Sally SmallTummy",
-    quote:
-      "This buffet was no disappointment. You should be disappointed if you do not check this place out ASAP!",
-    src: "/testimonials/sally-smalltummy.png",
-    id: 2,
-  },
-  {
-    name: "Jimmy Buffet",
-    quote:
-      "No margaritas in this place, but the buffet certainly makes up for that! Now where is that shaker of salt?",
-    src: "/testimonials/jimmy-buffet.png",
-    id: 3,
-  },
-  {
-    name: "Samantha HungryForMore",
-    quote:
-      "I am hungry for more! I will be back for sure. Buffet was out of this world!",
-    src: "/testimonials/samantha-hungryformore.png",
-    id: 4,
-  },
-  {
-    name: "Patti Pickyeater",
-    quote:
-      "I am a picky eater, but this place has something for everyone. I will be back for more.",
-    src: "/testimonials/patti-pickyeater.png",
-    id: 5,
-  },
-  {
-    name: "Betty SecondPlate",
-    quote:
-      "I am on my second plate and I am still craving more of this delicious yum yum to my tum tum buffet!",
-    src: "/testimonials/betty-secondplate.png",
-    id: 6,
-  },
-];
+const ImageCarousel = () => {
+  const [currentReview, setCurrentReview] = useState(0);
 
-const ImageCarousel = ({ images }) => {
-  const [currentImage, setCurrentImage] = useState(0);
+  const reviews_data = useSelector(selectedReviews);
+
+  useEffect(() => {
+    if (reviews_data) {
+      console.log(reviews_data);
+    }
+  }, [reviews_data]);
+
   const handlePrev = () => {
-    setCurrentImage((prevImage) =>
-      prevImage === 0 ? data.length - 1 : prevImage - 1
+    setCurrentReview((prevReview) =>
+      prevReview === 0 ? reviews_data.length - 1 : prevReview - 1
     );
   };
   const handleNext = () => {
-    setCurrentImage((prevImage) =>
-      prevImage === data.length - 1 ? 0 : prevImage + 1
+    setCurrentReview((prevReview) =>
+      prevReview === reviews_data.length - 1 ? 0 : prevReview + 1
     );
   };
 
@@ -71,7 +38,13 @@ const ImageCarousel = ({ images }) => {
           title={"our clients say"}
           white_color={"white"}
         />
-        <ClientText name={"John"} comment={"Hello World"} rating={3} />
+        {reviews_data && reviews_data.length && (
+          <ClientText
+            name={reviews_data[currentReview].name}
+            comment={reviews_data[currentReview].comment}
+            rating={reviews_data[currentReview].rating}
+          />
+        )}
         <ButtonContainer>
           <Button onClick={handlePrev}>Prev</Button>
           <Button onClick={handleNext}>Next</Button>
@@ -85,7 +58,6 @@ export default ImageCarousel;
 
 const Container = styled.section`
   width: 100%;
-  height: 100%;
   background-color: black;
   opacity: 0.95;
   background-image: url("blacklogo.png");
@@ -96,7 +68,7 @@ const Container = styled.section`
 
 const TestimonialContainer = styled.div`
   width: 90%;
-  height: auto;
+  height: 100%;
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -125,4 +97,7 @@ const Button = styled.button`
   font-family: "Caviar Dreams Bold";
   padding: 2px 40px;
   color: white;
+  &:hover {
+    transform: scale(1.03);
+  }
 `;
