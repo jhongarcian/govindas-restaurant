@@ -38,6 +38,7 @@ const ImageCarousel = () => {
           title={"our clients say"}
           white_color={"white"}
         />
+
         {reviews_data && reviews_data.length && (
           <ClientText
             name={reviews_data[currentReview].name}
@@ -45,6 +46,7 @@ const ImageCarousel = () => {
             rating={reviews_data[currentReview].rating}
           />
         )}
+
         <ButtonContainer>
           <Button onClick={handlePrev}>Prev</Button>
           <Button onClick={handleNext}>Next</Button>
@@ -64,6 +66,15 @@ const Container = styled.section`
   background-repeat: no-repeat;
   background-position: center;
   padding: 40px 0;
+`;
+
+const ReviewContainer = styled.div`
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const TestimonialContainer = styled.div`
