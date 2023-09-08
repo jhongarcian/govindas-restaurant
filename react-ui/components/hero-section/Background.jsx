@@ -1,8 +1,25 @@
 import { styled, keyframes } from "styled-components";
 import restaurant from "/restaurant.jpeg";
 import "../../src/App.css";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Background = () => {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const handleWindowResize = () => {
+    setWindowWidth(window.innerWidth);
+  };
+  useEffect(() => {
+    window.addEventListener("resize", handleWindowResize);
+    return () => window.removeEventListener("resize", handleWindowResize);
+  }, []);
+
+  const navigate = useNavigate();
+
+  const handelClick = () => {
+    navigate("/order-pay");
+  };
+
   return (
     <BackgroundContainer>
       <ImageFaded>
@@ -12,8 +29,12 @@ const Background = () => {
       <TextContainer>
         <WelcomeText />
         <GovindasText />
-        <ParagraphText />
-        <CallActionButtonText />
+        {windowWidth >= 500 && <ParagraphText />}
+        {windowWidth >= 500 && (
+          <CallActionButton type="button" onClick={handelClick}>
+            Order Now!
+          </CallActionButton>
+        )}
       </TextContainer>
     </BackgroundContainer>
   );
@@ -30,7 +51,8 @@ const SlideFromLeft = keyframes`
 const BackgroundContainer = styled.section`
   width: 100%;
   height: 100%;
-  max-height: 150vh;
+  max-height: 121vh;
+  min-height: 550px;
   position: relative;
 `;
 
@@ -44,6 +66,7 @@ const Image = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
 `;
 
 const ImageOverlay = styled.div`
@@ -155,7 +178,3 @@ const CallActionButton = styled.button`
     font-size: 20px;
   }
 `;
-
-const CallActionButtonText = () => {
-  return <CallActionButton>view more</CallActionButton>;
-};
