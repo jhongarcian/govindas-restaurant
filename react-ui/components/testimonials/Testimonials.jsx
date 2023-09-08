@@ -71,7 +71,10 @@ const Container = styled.section`
 const ReviewContainer = styled.div`
   width: 100%;  
   height: 100%;
-  min-height: 320px;
+  min-height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const TestimonialContainer = styled.div`

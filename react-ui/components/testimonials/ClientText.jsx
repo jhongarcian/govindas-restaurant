@@ -90,6 +90,7 @@ const ClientText = ({ comment, rating, name }) => {
         </QuoteContainer>
       </TextContainer>
       <NameContainer>{name}</NameContainer>
+      <NameLabel>customer name</NameLabel>
     </Container>
   );
 };
@@ -161,4 +162,15 @@ const NameContainer = styled.span`
   line-height: normal;
   text-transform: capitalize;
   text-align: center;
+`;
+
+const NameLabel = styled(NameContainer)`
+  color: #ffc800;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: bold;
+  border-top: 1px solid #ffc800;
+  width: 200px;
+  padding-top: 10px;
+  margin: 0 auto;
 `;
