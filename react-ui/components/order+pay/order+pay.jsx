@@ -89,18 +89,17 @@ const OrderContainer = styled.section`
   height: 100%;
   background: #fff;
   position: relative;
+  padding: 44px 0;
 `;
 
 const WrapContainer = styled.div`
   width: 90%;
-  height: fit-content;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  align-content: stretch;
   gap: 24px;
-  padding: 24px 0;
   margin: 0 auto;
   @media (width >= 990px) {
     flex-direction: row;
@@ -109,7 +108,6 @@ const WrapContainer = styled.div`
 
 const CardContainer = styled.div`
   width: 100%;
-  height: fit-content;
   max-width: 500px;
   flex: 1;
   border: 2px solid #f5f2e8;
@@ -164,6 +162,7 @@ const Image = styled.img`
 
 const SocialLinkContainer = styled.div`
   width: 100%;
+  min-height: 44px;
   text-align: center;
   font-family: "Caviar Dreams";
   font-weight: bold;
@@ -191,7 +190,7 @@ const Button = styled.a`
 
 const SocialFlexContainer = styled.div`
   width: 100%;
-  height: auto;
+  min-height: 44px;
   display: flex;
   flex-direction: row;
   gap: 24px;
