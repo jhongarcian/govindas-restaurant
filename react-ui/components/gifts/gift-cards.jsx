@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { Title } from "../index";
 import styled from "styled-components";
 import mobile_image from "/gift-card/gift-card.jpg";
 import desktop_image from "/gift-card/gift-card-desktop.jpg";
@@ -99,11 +100,13 @@ const GiftCards = () => {
           </div>
           <FormContainer onSubmit={handleSubmit}>
             <div className="info-container">
-              <h1 className="title">Gift Cards</h1>
-              <div className="sub-title">
-                Purchase an Instant Gift Certificate to Govindas Vegetarian
-                Cuisine
-              </div>
+              <Title
+                info={"get your's now"}
+                title={"Gift Cards"}
+                subtitle={
+                  "Purchase an Instant Gift Certificate from Govindas Vegetarian Cuisine"
+                }
+              />
               <WrapContainer>
                 <Headings>
                   <Label htmlFor="amount">Amount:</Label>
@@ -249,12 +252,19 @@ const GiftCards = () => {
 export default GiftCards;
 
 const Gift = styled.section`
+  width: 100%;
+  height: 100%;
+  background-color: rgba(252, 248, 239, 0.959);
   .main {
     height: 100%;
     width: 100%;
     display: flex;
     flex-shrink: 0;
-    background-color: rgba(252, 248, 239, 0.959);
+    margin: 0 auto;
+    padding: 44px 0;
+    @media (width >= 920px) {
+      width: 90%;
+    }
   }
   .container {
     width: 100%;
@@ -270,9 +280,7 @@ const Gift = styled.section`
   }
   .img-container {
     width: 100%;
-    height: 350px;
-    object-fit: cover;
-    object-position: center;
+    height: 200px;
     @media (width >= 920px) {
       height: auto;
       max-height: fit-content;
@@ -280,16 +288,19 @@ const Gift = styled.section`
     }
   }
   .img {
+    width: 90%;
+    height: 200px;
     object-fit: cover;
     object-position: bottom;
-    width: 100%;
-    height: 100%;
+    margin: 0 auto;
+
     @media (width >= 920px) {
+      object-position: center;
       float: left;
-      height: 100vh;
+      height: 90vh;
       width: 100%;
       position: sticky;
-      top: 0;
+      top: calc(0% + 5vh);
     }
   }
   .info-container {
@@ -370,7 +381,6 @@ const FormContainer = styled.form`
   justify-content: center;
   flex: 1;
   width: 100%;
-  padding: 60px 0;
 `;
 
 const FlexContainer = styled.div`
