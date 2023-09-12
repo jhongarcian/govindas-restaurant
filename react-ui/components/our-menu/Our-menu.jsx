@@ -45,10 +45,6 @@ const OurMenu = () => {
       />
       <Wrapper className="y-wrap">
         <SpecialEventContainer>
-          <ImageFaded>
-            <Image src={restaurant} />
-            <ImageOverlay />
-          </ImageFaded>
           <MenuListContainer>
             <MenuWrapper>
               <Logo src={logo} alt={"logo creart"} />
@@ -99,11 +95,12 @@ const OurMenu = () => {
 export default OurMenu;
 
 const OurMenuContainer = styled.section`
-  width: 100%;
+  width: 90%;
   height: 100%;
   position: relative;
   background: #fff;
-  padding: 24px 0;
+  padding: 44px 0;
+  margin: 0 auto;
 `;
 
 const Wrapper = styled.div`
@@ -112,8 +109,7 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   gap: 24px;
-  padding-top: 24px;
-  padding-bottom: 24px;
+  padding: 24px 0;
   border-top: 1px solid rgba(0, 0, 0, 0.388);
   border-bottom: 1px solid rgba(0, 0, 0, 0.388);
   backdrop-filter: blur(25px);
@@ -124,58 +120,53 @@ const Wrapper = styled.div`
 
 const SpecialEventContainer = styled.div`
   position: relative;
-  /* flex-grow: 1; */
-  min-width: 280px;
   width: 100%;
   height: fit-content;
-  max-height: 570px;
+  border-radius: 16px;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.47) 0%,
+      rgba(0, 0, 0, 0.47) 100%
+    );
+    z-index: 1;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("/our-menu/bg-special-event.jpeg") no-repeat;
+    background-position: center;
+    background-size: cover;
+    z-index: -1;
+  }
 
   @media (width >= 992px) {
     width: 40%;
   }
 `;
 
-const ImageFaded = styled.div`
-  position: relative;
-  width: 100%;
-  height: 100%;
-`;
-
-const Image = styled.img`
-  width: 100%;
-  height: 100%;
-  flex-grow: 1;
-  max-height: 570px;
-  object-fit: cover;
-  border-radius: 20px;
-`;
-
-const ImageOverlay = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.47) 0%,
-    rgba(0, 0, 0, 0.47) 100%
-  );
-  border-radius: 20px;
-`;
-
 const MenuListContainer = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
   width: 100%;
   height: 100%;
   padding: 24px;
 `;
 
 const MenuWrapper = styled.div`
+  position: relative;
+  z-index: 2;
   width: 100%;
   height: 100%;
   display: flex;
