@@ -136,6 +136,7 @@ const MenuWrapper = styled.div`
   height: 100%;
   display: flex;
   justify-content: center;
+  padding: 44px 0;
 `;
 
 const FoodAndInfoContainer = styled.div`
@@ -143,7 +144,6 @@ const FoodAndInfoContainer = styled.div`
   flex-direction: column;
   text-align: center;
   flex: 1;
-  padding: 24px 0;
 `;
 
 const FoodContainer = styled.div`

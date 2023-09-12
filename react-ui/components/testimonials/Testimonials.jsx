@@ -65,16 +65,7 @@ const Container = styled.section`
   background-image: url("blacklogo.png");
   background-repeat: no-repeat;
   background-position: center;
-  padding: 40px 0;
-`;
-
-const ReviewContainer = styled.div`
-  width: 100%;
-  height: 100%;
-  min-height: 400px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 44px 0;
 `;
 
 const TestimonialContainer = styled.div`

@@ -161,7 +161,7 @@ const Container = styled.section`
   place-items: center;
   background: rgba(252, 248, 239, 0.959);
   position: relative;
-  padding: 40px 0;
+  padding: 44px 0;
 `;
 
 // Vectors
