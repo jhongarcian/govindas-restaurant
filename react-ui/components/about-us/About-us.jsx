@@ -1,5 +1,4 @@
 import { styled } from "styled-components";
-import background from "/bg-about-us.png";
 import { Cards, Title } from "..";
 import first_image from "/about-images/food-1.png";
 import second_image from "/about-images/Rectangle 15.png";
@@ -16,10 +15,6 @@ const AboutUs = () => {
 
   return (
     <BackgroundContainer>
-      <ImageFaded>
-        <ImageBg src={background} />
-        <ImageOverlay />
-      </ImageFaded>
       <Wrapper className="y-wrap">
         <Title
           title={information.title}
@@ -40,51 +35,24 @@ export default AboutUs;
 
 const BackgroundContainer = styled.div`
   width: 100%;
-  height: 1850px;
-  position: relative;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  background: url("/bg-about-us.png") no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-color: rgba(252, 248, 239, 0.959);
 
   @media (width >= 996px) {
     height: 100%;
   }
 `;
 
-const ImageFaded = styled.div`
-  position: absolute;
-  width: 100%;
-  height: 100%;
-`;
-
-const ImageBg = styled.img`
-  position: relative;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-`;
-
-const ImageOverlay = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-      to bottom,
-      rgba(208, 175, 61, 0.03) 0%,
-      rgba(208, 175, 61, 0.03) 100%
-    ),
-    no-repeat;
-`;
-
 const Wrapper = styled.div`
-  position: relative;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  padding: 24px 0;
+  height: 100%;
+  width: 90%;
+  padding: 44px 0;
   display: flex;
   flex-direction: column;
   gap: 28px;
