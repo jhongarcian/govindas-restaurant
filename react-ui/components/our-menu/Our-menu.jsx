@@ -1,12 +1,7 @@
 import { styled } from "styled-components";
 import { Title, MenuPrice } from "../index.js";
-import restaurant from "/our-menu/bg-special-event.jpeg";
 import logo from "/Primary_main-Govindas-Logo-T-(1)d 3.png";
-import dish1 from "/our-menu/dishpic.png";
-import dish2 from "/our-menu/Ellipse 3588 (1).png";
-import dish3 from "/our-menu/Ellipse 3588 (2).png";
-import dish4 from "/our-menu/Ellipse 3588 (3).png";
-import dish5 from "/our-menu/Ellipse 3588 (5).png";
+import data from "../../mocks/our_menu.json";
 import burger from "/vectors/burger-two.svg";
 import "../../src/App.css";
 
@@ -36,6 +31,21 @@ const OurMenu = () => {
       return <EventsStyle key={item}>{item}</EventsStyle>;
     });
 
+  const dataMenu =
+    data &&
+    data.length &&
+    data.map((item) => {
+      return (
+        <MenuPrice
+          key={item.name}
+          price={item.price}
+          title={item.name}
+          allergy={item.allergy}
+          image={item.image}
+        />
+      );
+    });
+
   return (
     <OurMenuContainer>
       <Title
@@ -56,38 +66,7 @@ const OurMenu = () => {
             </MenuWrapper>
           </MenuListContainer>
         </SpecialEventContainer>
-        <MenuContainer>
-          <MenuPrice
-            price={50}
-            title={"Tofu Cooked in Tomato Sauce"}
-            alergy={"Vegan, Gluten Friendly"}
-            image={dish1}
-          ></MenuPrice>
-          <MenuPrice
-            price={50}
-            title={"Eggplant/Tomatoes cooked with Yogurt"}
-            alergy={"Gluten Friendly"}
-            image={dish2}
-          ></MenuPrice>
-          <MenuPrice
-            price={50}
-            title={"Bhindi Masala Okra and Potatoes"}
-            alergy={"Vegan, Gluten Friendly"}
-            image={dish3}
-          ></MenuPrice>
-          <MenuPrice
-            price={50}
-            title={"Chickpeas cooked with Oil and Spices"}
-            alergy={"Vegan, Gluten Friendly"}
-            image={dish4}
-          ></MenuPrice>
-          <MenuPrice
-            price={50}
-            title={"Chana Dal & Moong Dal cooked with Ginger"}
-            alergy={"Vegan, Gluten Friendly"}
-            image={dish5}
-          ></MenuPrice>
-        </MenuContainer>
+        <MenuContainer>{dataMenu}</MenuContainer>
       </Wrapper>
     </OurMenuContainer>
   );
