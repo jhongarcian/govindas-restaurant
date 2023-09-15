@@ -1,0 +1,33 @@
+[
+    {
+        "name": "tofu cooked in tomato sauce",
+        "price": 50,
+        "allergy": "V,GF",
+        "image": "/our-menu/dishpic.png"
+    },
+    {
+        "name": "eggplant cooked with yogurt",
+        "price": 50,
+        "allergy": "GF",
+        "image": "/our-menu/Ellipse 3588 (1).png"
+    },
+    {
+        "name": "bhindi masala",
+        "price": 50,
+        "allergy": "V,GF",
+        "image": "/our-menu/Ellipse 3588 (2).png"
+    },
+    {
+        "name": "chana masala",
+        "price": 50,
+        "allergy": "V,GF",
+        "image": "/our-menu/Ellipse 3588 (3).png"
+    },
+    {
+        "name": "dal fry",
+        "price": 50,
+        "allergy": "V,GF",
+        "image": "/our-menu/Ellipse 3588 (5).png"
+    }
+    
+]

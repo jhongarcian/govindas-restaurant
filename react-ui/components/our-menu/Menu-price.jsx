@@ -1,7 +1,7 @@
 import { styled } from "styled-components";
 import "../../src/App.css";
 
-const MenuPrice = ({ title, alergy, price, image }) => {
+const MenuPrice = ({ title, allergy, price, image }) => {
   return (
     <Container>
       <DishContainer>
@@ -9,7 +9,7 @@ const MenuPrice = ({ title, alergy, price, image }) => {
       </DishContainer>
       <NameContainer>
         <FoodTitleText text={title} />
-        <AlergiesText text={alergy} />
+        <AlergiesText text={allergy} />
       </NameContainer>
       <Price text={price} />
     </Container>
@@ -28,10 +28,10 @@ const Container = styled.div`
 `;
 
 const DishContainer = styled.div`
-  min-width: 70px;
-  max-width: 120px;
-  min-height: 70px;
-  max-height: 120px;
+  min-width: 40px;
+  max-width: 90px;
+  min-height: 40px;
+  max-height: 90px;
   border-radius: 50%;
   border: none;
   overflow: hidden;
@@ -60,7 +60,7 @@ const FoodTitleStyle = styled.span`
   line-height: normal;
   text-transform: capitalize;
   @media (width >= 662px) {
-    font-size: 30px;
+    font-size: 24px;
   }
 `;
 
