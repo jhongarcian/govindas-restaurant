@@ -11,6 +11,7 @@ import Contact from "./contact us/contact";
 import ReviewStars from "./review/ReviewStars";
 import Testimonials from "./testimonials/Testimonials";
 import ClientText from "./testimonials/ClientText";
+import CateringForm from "./catering/CateringForm";
 
 
-export { Background, AboutUs, Cards, Title, OurMenu, MenuPrice, CateringRequest, FoodCard, PostMenu, Contact, ReviewStars, Testimonials, ClientText };
+export { Background, AboutUs, Cards, Title, OurMenu, MenuPrice, CateringRequest, FoodCard, PostMenu, Contact, ReviewStars, Testimonials, ClientText, CateringForm };

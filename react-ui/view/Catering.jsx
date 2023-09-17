@@ -1,10 +1,12 @@
-import { PostMenu } from "../components";
+import { lazy, Suspense } from "react";
+const CateringForm = lazy(() => import("../components/catering/CateringForm"));
 
 const Catering = () => {
-
   return (
     <>
-    <PostMenu />
+      <Suspense fallback={<div>Loading ...</div>}>
+        <CateringForm />
+      </Suspense>
     </>
   );
 };
