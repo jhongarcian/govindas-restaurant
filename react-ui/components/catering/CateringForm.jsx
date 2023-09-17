@@ -1,7 +1,7 @@
 import { styled } from "styled-components";
 import { Title } from "../index";
 import { useState } from "react";
-import { BasicInfo, Appetizers, Rice, Bread } from "./form/index";
+import { BasicInfo, Appetizers, Rice, Bread, Dal } from "./form/index";
 
 const CateringForm = () => {
   const [formData, setFormData] = useState([
@@ -75,6 +75,7 @@ const CateringForm = () => {
           <SectionTitle>bread</SectionTitle>
           <Bread />
           <SectionTitle>dal</SectionTitle>
+          <Dal />
           <SectionTitle>panner items</SectionTitle>
           <SectionTitle>vegetable Items</SectionTitle>
           <SectionTitle>desserts</SectionTitle>
