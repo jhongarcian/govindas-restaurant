@@ -8,6 +8,7 @@ import {
   InputLabelRequired,
   FielContainerRow,
   InputFieldCheckbox,
+  CheckboxContainer,
 } from "../FormStyledComponents";
 
 const BasicInfo = () => {
@@ -207,13 +208,6 @@ const NameInputContainer = styled.div`
 
 const SingleInputContainer = styled.div`
   width: 100%;
-`;
-
-const CheckboxContainer = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
 `;
 
 const TimeInput = styled.input`

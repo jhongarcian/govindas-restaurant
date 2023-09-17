@@ -1,24 +1,10 @@
 import { styled } from "styled-components";
 import { Title } from "../index";
 import { useState } from "react";
-import BasicInfo from "./form/BasicInfo";
+import { BasicInfo, Appetizers, Rice } from "./form/index";
 
 const CateringForm = () => {
   const [formData, setFormData] = useState([
-    {
-      appetizers: {
-        salad: false,
-        raita: false,
-        papad_and_chutneys: false,
-      },
-    },
-    {
-      rice: {
-        pulao_rice: false,
-        veggie_biryani: false,
-        jeera_rice: false,
-      },
-    },
     {
       bread: {
         puri: false,
@@ -89,7 +75,9 @@ const CateringForm = () => {
           <SectionTitle>personal information</SectionTitle>
           <BasicInfo />
           <SectionTitle>appetizers / sides</SectionTitle>
+          <Appetizers />
           <SectionTitle>rice</SectionTitle>
+          <Rice />
           <SectionTitle>bread</SectionTitle>
           <SectionTitle>dal</SectionTitle>
           <SectionTitle>panner items</SectionTitle>
