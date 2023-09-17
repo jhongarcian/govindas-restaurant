@@ -1,55 +1,174 @@
 import { styled } from "styled-components";
 import { Title } from "../index";
 import { useState } from "react";
-import { BasicInfo, Appetizers, Rice, Bread, Dal, Paneer } from "./form/index";
+import { BasicInfo, Checkbox } from "./form/index";
 
 const CateringForm = () => {
-  const [formData, setFormData] = useState([
+  const [rice, setRice] = useState([
     {
-      paneer_items: {
-        paneer_tikka_masala: false,
-        paneer_makhani: false,
-        saag_paneer: false,
-        matar_paneer: false,
-      },
+      id: 1,
+      name: "veggie pulao rice - [V, GF] rice, vegetables, oil",
+      value: false,
     },
     {
-      vegetable_items: {
-        baigan_bharatha: false,
-        bhindi_masala: false,
-        malai_kofta: false,
-        mix_veggie_pakoras: false,
-        vegetable_kurma: false,
-        tofu_curry: false,
-        vegetable_jalfrezi: false,
-        vegetable_kofta: false,
-        bbq_tofu: false,
-        kadi_pakora: false,
-        pasta: false,
-      },
+      id: 2,
+      name: "veggie rice biryani - [V, GF] rice, vegetables, spices, oil",
+      value: false,
     },
     {
-      desserts: {
-        mango_halava: false,
-        vanilla_halava: false,
-        carob_halava: false,
-        khir: false,
-        custard_pudding: false,
-        vanilla_cake: false,
-        pineapple_cake: false,
-        chocolate_cake: false,
-      },
+      id: 3,
+      name: "jeera rice [V, GF] rice, cumin seeds, oil",
+      value: false,
     },
-    {
-      optional_sides: {
-        samosa: false,
-        drink_lemonade: false,
-        drink_mango_lassi: false,
-        drink_chai: false,
-      },
-    },
-    { note: "" },
   ]);
+  const [bread, setBread] = useState([
+    {
+      id: 1,
+      name: "puri - puffed flat bread (fried)",
+      value: false,
+    },
+    {
+      id: 2,
+      name: "roti - flat tortilla-like bread (not-fried)",
+      value: false,
+    },
+  ]);
+  const [paneer, setPaneer] = useState([
+    {
+      id: 1,
+      name: "Paneer Tikka Masala - Paneer Cheese cubes, Butter, Tomatoes, Bell Peppers",
+      value: false,
+    },
+    {
+      id: 2,
+      name: "Paneer Makhni - Paneer Cheese Cubes, Butter, Tomatoes in creamy sauce",
+      value: false,
+    },
+    {
+      id: 3,
+      name: "Saag paneer (GF) - Paneer Cheese with Spinach in creamy sauce",
+      value: false,
+    },
+    {
+      id: 3,
+      name: "matar paneer (GF) - Paneer Cheese with green peas in creamy sauce",
+      value: false,
+    },
+  ]);
+  const [dal, setDal] = useState([
+    {
+      id: 1,
+      name: "chana masala - [V,GF] chickpeas cooked with oil and spices",
+      value: false,
+    },
+    {
+      id: 2,
+      name: "dal fry - [V,GF] chana dal and moong dal cooked with ginger and oil",
+      value: false,
+    },
+    {
+      id: 3,
+      name: "dal makhani - [V,GF] black urad and rajma dal cooked with oil",
+      value: false,
+    },
+  ]);
+  const [appetizers, setAppetizers] = useState([
+    { id: 1, name: "fresh salad w/ home-made dressings", value: false },
+    {
+      id: 2,
+      name: "raita - (yogurt mix with cucumbers and herbs",
+      value: false,
+    },
+    { id: 3, name: "papad & chutneys - tamarind & green", value: false },
+  ]);
+  const [vegetables, setVegetables] = useState([
+    {
+      id: 1,
+      name: "Baingan Bharatha (GF) - Eggplant/Tomatoes cooked with Yogurt",
+      value: false,
+    },
+    {
+      id: 2,
+      name: "Bhindi Masala (Vegan, GF) - Okra and Potatoes",
+      value: false,
+    },
+    {
+      id: 3,
+      name: "Malai Kofta - Cauliflower / Carrot / Potatoes / Tomatoes / Cheese cooked with Oil",
+      value: false,
+    },
+    {
+      id: 4,
+      name: "Mix Vegetable Pakoras (Vegan, GF) - Vegetable with Chickpeas Flour battered/fried",
+      value: false,
+    },
+    {
+      id: 5,
+      name: "Navaratan Korma (GF) - Assorted Vegetables in rich creamy sauce",
+      value: false,
+    },
+    {
+      id: 6,
+      name: "Tofu Curry (Vegan, GF) - Tofu cooked with coconut milk and Chickpeas Flour",
+      value: false,
+    },
+    {
+      id: 7,
+      name: "Vegetable Jalfrezi (Vegan, GF) - Mixed Vegetables, Vegetable oil, Spices",
+      value: false,
+    },
+    {
+      id: 8,
+      name: "Vegetable Kofta (Vegan, GF) - Vegetables, Chickpea Flour, Oil",
+      value: false,
+    },
+    {
+      id: 9,
+      name: "BBQ Tofu (Vegan, GF) - Tofu cooked in Tomato sauce",
+      value: false,
+    },
+    {
+      id: 10,
+      name: "Kadi Pakora - Chickpea flour fried dumplings in curry gravy",
+      value: false,
+    },
+    { id: 11, name: "Pasta", value: false },
+  ]);
+
+  const [desserts, setDesserts] = useState([
+    {
+      id: 1,
+      name: "Fruit Halava (Vegan) - Semolina, Sugar, Fruit, Vegan Butter - Mango",
+      value: false,
+    },
+    {
+      id: 2,
+      name: "Fruit Halava (Vegan) - Semolina, Sugar, Fruit, Vegan Butter - Vanilla",
+      value: false,
+    },
+    {
+      id: 3,
+      name: "Fruit Halava (Vegan) - Semolina, Sugar, Fruit, Vegan Butter - Carob",
+      value: false,
+    },
+    {
+      id: 4,
+      name: "Khir (Sweet Rice) - (GF) Rice with Milk, Sugar",
+      value: false,
+    },
+    { id: 5, name: "Cake - Vanilla - eggless", value: false },
+    { id: 6, name: "Cake - Pineapple - eggless", value: false },
+    { id: 7, name: "Cake - Chocolate - eggless", value: false },
+  ]);
+
+  const [snacksAndDrinks, setSnacksAndDrinks] = useState([
+    { id: 1, name: "Samosa", value: false },
+    { id: 2, name: "Drink: Ginger-Mint Lemonade", value: false },
+    { id: 3, name: "Drink: Iced Tea", value: false },
+    { id: 4, name: "Drink: Chai", value: false },
+    { id: 5, name: "Mango Lassi", value: false },
+  ]);
+
   return (
     <CateringContainer>
       <Wrapper>
@@ -62,18 +181,21 @@ const CateringForm = () => {
           <SectionTitle>personal information</SectionTitle>
           <BasicInfo />
           <SectionTitle>appetizers / sides</SectionTitle>
-          <Appetizers />
+          <Checkbox items={appetizers} setItems={setAppetizers} />
           <SectionTitle>rice</SectionTitle>
-          <Rice />
+          <Checkbox items={rice} setItems={setRice} />
           <SectionTitle>bread</SectionTitle>
-          <Bread />
+          <Checkbox items={bread} setItems={setBread} />
           <SectionTitle>dal</SectionTitle>
-          <Dal />
+          <Checkbox items={dal} setItems={setDal} />
           <SectionTitle>panner items</SectionTitle>
-          <Paneer />
+          <Checkbox items={paneer} setItems={setPaneer} />
           <SectionTitle>vegetable Items</SectionTitle>
+          <Checkbox items={vegetables} setItems={setVegetables} />
           <SectionTitle>desserts</SectionTitle>
+          <Checkbox items={desserts} setItems={setDesserts} />
           <SectionTitle>optional sides</SectionTitle>
+          <Checkbox items={snacksAndDrinks} setItems={setSnacksAndDrinks} />
         </Form>
       </Wrapper>
     </CateringContainer>

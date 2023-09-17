@@ -9,6 +9,7 @@ export const InputLabel = styled.span`
   text-transform: capitalize;
   font-weight: bold;
   padding-bottom: 4px;
+  width: 100%;
 `;
 
 export const InputLabelRequired = styled(InputLabel)`
