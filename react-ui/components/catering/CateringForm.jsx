@@ -4,6 +4,7 @@ import { useState } from "react";
 import { BasicInfo, Checkbox } from "./form/index";
 
 const CateringForm = () => {
+  const [personalInformation, setPersonalInformation] = useState({});
   const [rice, setRice] = useState([
     {
       id: 1,
@@ -50,7 +51,7 @@ const CateringForm = () => {
       value: false,
     },
     {
-      id: 3,
+      id: 4,
       name: "matar paneer (GF) - Paneer Cheese with green peas in creamy sauce",
       value: false,
     },
@@ -169,6 +170,16 @@ const CateringForm = () => {
     { id: 5, name: "Mango Lassi", value: false },
   ]);
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(appetizers);
+    console.log(personalInformation);
+  };
+
+  const handleAction = (data) => {
+    setPersonalInformation(data);
+  };
+
   return (
     <CateringContainer>
       <Wrapper>
@@ -179,7 +190,7 @@ const CateringForm = () => {
         />
         <Form>
           <SectionTitle>personal information</SectionTitle>
-          <BasicInfo />
+          <BasicInfo action={handleAction} />
           <SectionTitle>appetizers / sides</SectionTitle>
           <Checkbox items={appetizers} setItems={setAppetizers} />
           <SectionTitle>rice</SectionTitle>
@@ -196,6 +207,9 @@ const CateringForm = () => {
           <Checkbox items={desserts} setItems={setDesserts} />
           <SectionTitle>optional sides</SectionTitle>
           <Checkbox items={snacksAndDrinks} setItems={setSnacksAndDrinks} />
+          <SubmitFormButton type="submit" onClick={handleSubmit}>
+            request quote
+          </SubmitFormButton>
         </Form>
       </Wrapper>
     </CateringContainer>
@@ -238,4 +252,34 @@ const SectionTitle = styled.span`
   padding-bottom: 10px;
   border-bottom: 1px solid #d0af3d;
   text-transform: uppercase;
+`;
+
+const SubmitFormButton = styled.button`
+  background: #d0af3d;
+  border-radius: 999px;
+  box-shadow: #d0af3d 0 10px 20px -10px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  font-family: Inter, Helvetica, "Apple Color Emoji", "Segoe UI Emoji",
+    NotoColorEmoji, "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji",
+    EmojiSymbols, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue",
+    "Noto Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  opacity: 1;
+  outline: 0 solid transparent;
+  padding: 8px 18px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: fit-content;
+  word-break: break-word;
+  border: 0;
+  text-transform: capitalize;
+  margin: 0 auto;
+  &:hover {
+    background: #b99d35;
+  }
 `;

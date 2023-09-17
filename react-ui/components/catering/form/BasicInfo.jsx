@@ -11,7 +11,7 @@ import {
   CheckboxContainer,
 } from "../FormStyledComponents";
 
-const BasicInfo = () => {
+const BasicInfo = ({ action }) => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [phone, setPhone] = useState("");
@@ -29,12 +29,53 @@ const BasicInfo = () => {
 
   const handleChange = (setState) => (e) => {
     setState(e.target.value);
+    const data = {
+      firstName,
+      lastName,
+      email,
+      phone,
+      delivery,
+      pickUp,
+      location,
+      zipCode,
+      desiredDate,
+      hours,
+      minutes,
+      time,
+      howMany,
+      specialNotes,
+    };
+
+    if (typeof action === "function") {
+      action(data);
+    }
   };
 
   const handlePreferenceChange = (e) => {
     if (e.target.value === "true") return;
     setDelivery(!delivery);
     setPickUp(!pickUp);
+
+    const data = {
+      firstName,
+      lastName,
+      email,
+      phone,
+      delivery,
+      pickUp,
+      location,
+      zipCode,
+      desiredDate,
+      hours,
+      minutes,
+      time,
+      howMany,
+      specialNotes,
+    };
+
+    if (typeof action === "function") {
+      action(data);
+    }
   };
 
   return (
@@ -171,7 +212,7 @@ const BasicInfo = () => {
       </SingleInputContainer>
       <SingleInputContainer>
         <FieldContainer>
-          <InputLabelRequired>special notes</InputLabelRequired>
+          <InputLabel>special notes</InputLabel>
           <SpecialNotes
             maxLength={150}
             value={specialNotes}
@@ -190,7 +231,7 @@ const BasicInfoContainer = styled.div`
   height: auto;
   display: flex;
   flex-wrap: wrap;
-  gap: 1.5rem;
+  gap: 8px;
 `;
 
 const NameInputContainer = styled.div`
