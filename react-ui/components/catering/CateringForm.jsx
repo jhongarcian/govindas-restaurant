@@ -1,16 +1,10 @@
 import { styled } from "styled-components";
 import { Title } from "../index";
 import { useState } from "react";
-import { BasicInfo, Appetizers, Rice } from "./form/index";
+import { BasicInfo, Appetizers, Rice, Bread } from "./form/index";
 
 const CateringForm = () => {
   const [formData, setFormData] = useState([
-    {
-      bread: {
-        puri: false,
-        roti: false,
-      },
-    },
     {
       dal: {
         chana_masala: false,
@@ -79,6 +73,7 @@ const CateringForm = () => {
           <SectionTitle>rice</SectionTitle>
           <Rice />
           <SectionTitle>bread</SectionTitle>
+          <Bread />
           <SectionTitle>dal</SectionTitle>
           <SectionTitle>panner items</SectionTitle>
           <SectionTitle>vegetable Items</SectionTitle>
