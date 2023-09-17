@@ -1,10 +1,9 @@
-import { PostMenu } from "../components";
+import { CateringForm } from "../components";
 
 const Catering = () => {
-
   return (
     <>
-    <PostMenu />
+      <CateringForm />
     </>
   );
 };
