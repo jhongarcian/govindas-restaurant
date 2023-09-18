@@ -1,7 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import {
   Landing,
-  AboutUs,
   Contact,
   GiftCards,
   Menu,
@@ -16,7 +15,6 @@ const Main = () => {
     <main>
       <Routes>
         <Route path="/" element={<Landing />} />
-        <Route path="about-us" element={<AboutUs />} />
         <Route path="contact" element={<Contact />} />
         <Route path="gift-cards" element={<GiftCards />} />
         <Route path="menus" element={<Menu />} />

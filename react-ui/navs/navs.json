@@ -1,37 +1,27 @@
 [
     {
-        "name": "home",
-        "href": "/",
-        "id": 101
-    },
-    {
-        "name": "about us",
-        "href": "/about-us",
-        "id": 102
-    },
-    {
         "name": "menus",
         "href": "/menus",
-        "id": 103
+        "id": 101
     },
     {
         "name": "gift cards",
         "href": "/gift-cards",
-        "id": 104
+        "id": 102
     },
     {
         "name": "contact",
         "href": "/contact",
-        "id": 105
+        "id": 103
     },
     {
         "name": "order+pay",
         "href": "/order-pay",
-        "id": 106
+        "id": 104
     },
     {
         "name": "catering",
         "href": "/catering",
-        "id": 107
+        "id": 105
     }
 ]
