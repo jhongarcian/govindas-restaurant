@@ -50,8 +50,8 @@ const SlideFromLeft = keyframes`
 
 const BackgroundContainer = styled.section`
   width: 100%;
-  height: 100%;
-  max-height: 121vh;
+  height: 110%;
+  max-height: 130vh;
   min-height: 550px;
   position: relative;
 `;
