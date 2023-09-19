@@ -48,7 +48,7 @@ const Header = () => {
     >
       <NavContainer className="y-wrap" $mobile={isOpen.toString()}>
         <IconContainer size={windowWidth} onClick={handleClick}>
-          <Image src={image} />
+          <Image alt="govindas-logo" src={image} />
         </IconContainer>
         {windowWidth >= 992 && (
           <LargeScreenContainer className="y-navs">{navs}</LargeScreenContainer>
@@ -57,7 +57,12 @@ const Header = () => {
           <MobileContainer>
             <SmallScreenContainer $mobile={isOpen}>{navs}</SmallScreenContainer>
             <BurgerContainer $mobile={isOpen}>
-              <Hamburger toggled={isOpen} toggle={setIsOpen} size={28} />
+              <Hamburger
+                aria-label="menu trigger"
+                toggled={isOpen}
+                toggle={setIsOpen}
+                size={28}
+              />
             </BurgerContainer>
           </MobileContainer>
         )}
@@ -94,7 +99,9 @@ const NavContainer = styled.nav`
   margin: 0 auto;
 `;
 
-const IconContainer = styled.a`
+const IconContainer = styled.button`
+  background: none;
+  border: none;
   height: ${(props) => (props.size <= 992 ? "60px;" : "110px:;")};
   width: ${(props) => (props.size <= 992 ? "60px;" : "110px;")};
 `;

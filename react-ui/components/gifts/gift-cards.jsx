@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { Title } from "../index";
 import styled from "styled-components";
-import mobile_image from "/gift-card/gift-card.jpg";
-import desktop_image from "/gift-card/gift-card-desktop.jpg";
+import mobile_image from "/gift-card/gift-card.webp";
+import desktop_image from "/gift-card/gift-card-desktop-1.webp";
 import "../../src/App.css";
 
 const GiftCards = () => {
@@ -142,7 +142,6 @@ const GiftCards = () => {
                       required
                     />
                     <InputField
-                      id="buyer"
                       type="text"
                       name="lname"
                       value={buyerLastName}
@@ -190,7 +189,6 @@ const GiftCards = () => {
                       name="fname"
                     />
                     <InputField
-                      id="destinatary"
                       type="text"
                       value={destinataryLastName}
                       onChange={handleChange(setDestinataryLastName)}

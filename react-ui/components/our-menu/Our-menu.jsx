@@ -42,6 +42,7 @@ const OurMenu = () => {
           title={item.name}
           allergy={item.allergy}
           image={item.image}
+          imageInfo={item.name}
         />
       );
     });
@@ -60,7 +61,7 @@ const OurMenu = () => {
               <Logo src={logo} alt={"logo creart"} />
               <WrapperText>
                 <OurMenuTitleText />
-                <Divider src={burger} />
+                <Divider alt="divider" src={burger} />
                 <ListOfEvents>{list}</ListOfEvents>
               </WrapperText>
             </MenuWrapper>
@@ -164,8 +165,7 @@ const WrapperText = styled.div`
 `;
 
 const Logo = styled.img`
-  width: 90px;
-  height: 90px;
+  max-width: 90px;
   display: block;
 `;
 

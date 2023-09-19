@@ -1,7 +1,5 @@
 import { useState } from "react";
 import { styled } from "styled-components";
-import { IoAdd } from "react-icons/io5";
-import { CiCircleRemove } from "react-icons/ci";
 import Title from "../title/Title";
 import "../../src/App.css";
 
@@ -123,7 +121,7 @@ const PostMenu = () => {
           />
           <Wrapper>{inputs}</Wrapper>
           <Button type="button" onClick={handleAddInput}>
-            <IoAdd />
+            add item
           </Button>
           <FileContainer>
             <FileInput
@@ -146,7 +144,28 @@ const PostMenu = () => {
                 type="button"
                 onClick={handleRemove}
               >
-                <CiCircleRemove />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  x="0px"
+                  y="0px"
+                  width="38"
+                  height="39"
+                  viewBox="0 0 48 48"
+                >
+                  <path
+                    fill="#9fa8da"
+                    d="M12,13v25c0,2.2,1.8,4,4,4h16c2.2,0,4-1.8,4-4V13H12z"
+                  ></path>
+                  <path
+                    fill="#7986cb"
+                    d="M23,15h2v23h-2V15z M29,15h2v23h-2V15z M17,15h2v23h-2V15z"
+                  ></path>
+                  <path fill="#5c6bc0" d="M12,10h24v4H12V10z"></path>
+                  <path
+                    fill="#5c6bc0"
+                    d="M10,13h28v4H10V13z M20,12V8h8v4h2V8c0-1.1-0.9-2-2-2h-8c-1.1,0-2,0.9-2,2v4H20z"
+                  ></path>
+                </svg>
               </RemoveButton>
             )}
           </FileContainer>
@@ -304,12 +323,12 @@ const Button = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
+  border-radius: 12px;
+  padding: 8px 12px;
   border: none;
   cursor: pointer;
-  font-size: 25px;
+  font-size: 20px;
+  text-transform: uppercase;
   font-family: "Caviar Dreams Bold";
   margin: 0 auto;
   background: #1976d2;
@@ -335,16 +354,15 @@ const SendTweet = styled(Button)`
   }
 `;
 
-const RemoveButton = styled(Button)`
-  opacity: 0;
+const RemoveButton = styled.button`
+  border: none;
+  background: none;
+  height: 39px;
+  width: 38px;
+  padding: 0;
   ${(props) => props.$readyToSend && "opacity: 1;"}
-  transition: opacity 0.9s ease-in-out;
-  background: #f54646fc;
-  height: 35px;
-  width: 35px;
   margin: 0;
   &:hover {
-    background: #f54646a1;
     transform: translateY(-2px);
     transition: transform 0.2s ease-in-out;
   }

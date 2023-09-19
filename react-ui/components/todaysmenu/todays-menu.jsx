@@ -113,7 +113,12 @@ const TodaysMenu = () => {
             <MenuTime>*Wednesday, Friday & Sunday 100% Vegan Menu</MenuTime>
             <MenuTimeSocials>
               <MenuTimeText>Follow us on Twitter:</MenuTimeText>
-              <MenuTimeTextYellow>@GovindashouM</MenuTimeTextYellow>
+              <MenuTimeTextYellow
+                aria-label="Govindas twitter last post"
+                href="https://twitter.com/govindashoum?lang=es"
+              >
+                @GovindashouM
+              </MenuTimeTextYellow>
             </MenuTimeSocials>
           </MenuTextContainer>
         </FoodAndInfoContainer>
@@ -150,7 +155,7 @@ const FoodContainer = styled.div`
   display: flex;
   flex-direction: ${(props) => (props.$size >= 768 ? "row;" : "column;")};
   align-items: center;
-  padding-bottom: 24px ;
+  padding-bottom: 24px;
   flex-wrap: wrap;
 `;
 

@@ -43,11 +43,12 @@ const Footer = () => {
           )}
           <Container>
             <YellowHeader>Contact</YellowHeader>
-            <ContactWrapper>
-              <SmallLink
-                href="https://www.google.com/maps/place/Govinda's/@29.8177565,-95.4262318,17z/data=!3m1!4b1!4m6!3m5!1s0x8640c7a793081815:0xa368b1c70ee2e165!8m2!3d29.8177519!4d-95.4236569!16s%2Fg%2F11c0w0g5fw?entry=ttu"
-                target="_blank"
-              >
+            <ContactWrapper
+              href="https://www.google.com/maps/place/Govinda's/@29.8177565,-95.4262318,17z/data=!3m1!4b1!4m6!3m5!1s0x8640c7a793081815:0xa368b1c70ee2e165!8m2!3d29.8177519!4d-95.4236569!16s%2Fg%2F11c0w0g5fw?entry=ttu"
+              target="_blank"
+              aria-label="google maps"
+            >
+              <SmallLink>
                 <IconSvg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -69,8 +70,12 @@ const Footer = () => {
               </SmallLink>
               <WhiteSpan>1320 W 34th St, Houston, TX 77018</WhiteSpan>
             </ContactWrapper>
-            <ContactWrapper>
-              <SmallLink href="mailto:hello@govindashou.com">
+            <ContactWrapper
+              aria-label="email"
+              href="mailto:hello@govindashou.com"
+              target="_blank"
+            >
+              <SmallLink>
                 <IconSvg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -98,8 +103,8 @@ const Footer = () => {
               </SmallLink>
               <WhiteSpan>hello@govindashou.com</WhiteSpan>
             </ContactWrapper>
-            <ContactWrapper>
-              <SmallLink href="tel:8328319951">
+            <ContactWrapper href="tel:8328319951" aria-label="phone number">
+              <SmallLink >
                 <IconSvg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -160,7 +165,11 @@ const Footer = () => {
           <SocialMediaContainer>
             <WhiteSpan>Follow By:</WhiteSpan>
             <SocialMediaLinksContainer>
-              <Link href="https://twitter.com/GovindashouM" target="_blank">
+              <Link
+                aria-label="twitter icon"
+                href="https://twitter.com/GovindashouM"
+                target="_blank"
+              >
                 <IconSvg
                   xmlns="http://www.w3.org/2000/svg"
                   width={38}
@@ -180,6 +189,7 @@ const Footer = () => {
               <Link
                 href="https://www.facebook.com/GovindasHouston/"
                 target="_blank"
+                aria-label="facebook icon"
               >
                 <IconSvg
                   xmlns="http://www.w3.org/2000/svg"
@@ -344,7 +354,7 @@ const WhiteSpan = styled.span`
   }
 `;
 
-const YellowHeader = styled.h5`
+const YellowHeader = styled.span`
   color: #d0af3d;
   font-family: "Caviar Dreams";
   font-size: 18px;
