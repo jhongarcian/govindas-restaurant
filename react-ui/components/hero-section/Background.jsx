@@ -30,11 +30,9 @@ const Background = () => {
         <WelcomeText />
         <GovindasText />
         {windowWidth >= 500 && <ParagraphText />}
-        {windowWidth >= 500 && (
-          <CallActionButton type="button" onClick={handelClick}>
-            Order Now!
-          </CallActionButton>
-        )}
+        <CallActionButton type="button" onClick={handelClick}>
+          Order Now!
+        </CallActionButton>
       </TextContainer>
     </BackgroundContainer>
   );
@@ -77,7 +75,7 @@ const ImageOverlay = styled.div`
   height: 100%;
   background: linear-gradient(
     to bottom,
-    rgba(0, 0, 0, 0.9) 0%,
+    rgba(0, 0, 0, 0.8) 0%,
     rgba(0, 0, 0, 0.6) 100%
   );
 `;
@@ -113,7 +111,7 @@ const GovindasStyle = styled.h1`
   font-style: normal;
   letter-spacing: 13.2px;
   text-transform: uppercase;
-  font-weight: 400;
+  font-weight: bold;
   line-height: normal;
   @media (width >= 628px) {
     font-size: 60px;
@@ -157,7 +155,7 @@ const ParagraphText = () => {
 const CallActionButton = styled.button`
   font-family: "Open-Sans-Condensed";
   border: 1px solid #d0af3d;
-  padding: 18px 24px;
+  padding: 12px 16px;
   color: #fff;
   font-size: 14px;
   font-style: normal;
@@ -174,5 +172,6 @@ const CallActionButton = styled.button`
 
   @media (width >= 628px) {
     font-size: 20px;
+    padding: 18px 24px;
   }
 `;

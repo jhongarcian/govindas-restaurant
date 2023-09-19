@@ -28,19 +28,18 @@ const Container = styled.div`
 `;
 
 const DishContainer = styled.div`
-  min-width: 40px;
-  max-width: 90px;
-  min-height: 40px;
-  max-height: 90px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   border: none;
   overflow: hidden;
 `;
 
 const ImageDish = styled.img`
-  width: 90px;
-  height: 90px;
-  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 4/3;
+  object-fit: contain;
   object-position: center;
 `;
 
@@ -54,7 +53,7 @@ const NameContainer = styled.div`
 const FoodTitleStyle = styled.span`
   color: #000;
   font-family: "Caviar Dreams";
-  font-size: 20px;
+  font-size: 18px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
