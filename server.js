@@ -4,14 +4,14 @@ const server = express();
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const PORT = process.env.PORT || 3030;
-const path = require("path");
+const FRONTEND_URL = process.env.FRONTENDURL;
+const DEVELOP_URL = process.env.DEVELOPURL;
 
 const {giftCardsRouter, sessionIdRetrieves, today_menu, insertReview} = require("./routes");
 
 
-
 server.use(cors({
-    origin: ["http://localhost:5173", "*"],
+    origin: [FRONTEND_URL, DEVELOP_URL],
     methods: ["GET", "POST", "DELETE", 'UPDATE','PUT','PATCH'],
     credentials: true
 }));

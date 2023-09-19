@@ -10,12 +10,6 @@ const ImageCarousel = () => {
 
   const reviews_data = useSelector(selectedReviews);
 
-  useEffect(() => {
-    if (reviews_data) {
-      console.log(reviews_data);
-    }
-  }, [reviews_data]);
-
   const handlePrev = () => {
     setCurrentReview((prevReview) =>
       prevReview === 0 ? reviews_data.length - 1 : prevReview - 1
