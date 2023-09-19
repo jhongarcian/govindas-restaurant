@@ -1,9 +1,9 @@
 import { styled } from "styled-components";
 import { Cards, Title } from "..";
-import first_image from "/about-images/food-1.png";
-import second_image from "/about-images/Rectangle 15.png";
-import third_image from "/about-images/Rectangle 16.png";
-import fourth_image from "/about-images/Rectangle 17.png";
+import first_image from "/about-images/food-1-1.webp";
+import second_image from "/about-images/Rectangle-15.webp";
+import third_image from "/about-images/Rectangle-16.webp";
+import fourth_image from "/about-images/Rectangle-17.webp";
 
 const AboutUs = () => {
   const information = {
@@ -22,10 +22,10 @@ const AboutUs = () => {
           subtitle={information.subtitle}
         />
         <ImagesContainer>
-          <Cards image={first_image} />
-          <Cards image={second_image} />
-          <Cards image={third_image} />
-          <Cards image={fourth_image} />
+          <Cards info={"paratha"} image={first_image} />
+          <Cards info={"paneer tikka"} image={second_image} />
+          <Cards info={"chat masala"} image={third_image} />
+          <Cards info={"bhindi curry"} image={fourth_image} />
         </ImagesContainer>
       </Wrapper>
     </BackgroundContainer>
@@ -39,7 +39,7 @@ const BackgroundContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url("/bg-about-us.png") no-repeat;
+  background: url("/bg-about-us.webp") no-repeat;
   background-position: center;
   background-size: cover;
   background-color: rgba(252, 248, 239, 0.959);
@@ -59,10 +59,15 @@ const Wrapper = styled.div`
 `;
 
 const ImagesContainer = styled.div`
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: row;
+  align-items: center;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
+
   gap: 44px;
+  @media (width >= 700px) {
+  }
 `;

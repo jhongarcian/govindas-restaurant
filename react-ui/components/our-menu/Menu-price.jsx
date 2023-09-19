@@ -1,11 +1,11 @@
 import { styled } from "styled-components";
 import "../../src/App.css";
 
-const MenuPrice = ({ title, allergy, price, image }) => {
+const MenuPrice = ({ title, allergy, price, image, imageInfo }) => {
   return (
     <Container>
       <DishContainer>
-        <ImageDish src={image} />
+        <ImageDish alt={imageInfo} src={image} />
       </DishContainer>
       <NameContainer>
         <FoodTitleText text={title} />
@@ -38,8 +38,8 @@ const DishContainer = styled.div`
 `;
 
 const ImageDish = styled.img`
-  width: 100%;
-  height: 100%;
+  width: 90px;
+  height: 90px;
   object-fit: cover;
   object-position: center;
 `;

@@ -23,7 +23,7 @@ const OrderRedirect = () => {
             </span>
           </DescriptionContainer>
           <ImageContainer>
-            <Image src="uberImage.png" />
+            <Image alt="uber eats flyer" src="uberImage.webp" />
           </ImageContainer>
           <SocialLinkContainer>
             <Button href="https://www.ubereats.com/store/govindas-vegetarian-cuisine/TEe_ZaVCQiCrwEaTsBy65Q?diningMode=DELIVERY&pl=JTdCJTIyYWRkcmVzcyUyMiUzQSUyMjE0MDUlMjBXJTIwMzR0aCUyMFN0JTIwYTMwNSUyMiUyQyUyMnJlZmVyZW5jZSUyMiUzQSUyMkVpc3hOREExSUZjZ016UjBhQ0JUZENCaE16QTFMQ0JJYjNWemRHOXVMQ0JVV0NBM056QXhPQ3dnVlZOQklpQWFIZ29XQ2hRS0VnbXAtNF8wcDhkQWhoSGhZMUZkSHhDT2RoSUVZVE13TlElMjIlMkMlMjJyZWZlcmVuY2VUeXBlJTIyJTNBJTIyZ29vZ2xlX3BsYWNlcyUyMiUyQyUyMmxhdGl0dWRlJTIyJTNBMjkuODE2OTg5NyUyQyUyMmxvbmdpdHVkZSUyMiUzQS05NS40MjQyMDkxOTk5OTk5OSU3RA%3D%3D&ps=1">
@@ -48,12 +48,13 @@ const OrderRedirect = () => {
             </span>
           </DescriptionContainer>
           <ImageContainer>
-            <Image src="specials.png" />
+            <Image alt="weekend special menu flyer" src="specials.png" />
           </ImageContainer>
           <SocialFlexContainer>
             <Facebook
               href="https://z-upload.facebook.com/GovindasHouston"
               target="_blank"
+              aria-label="facebook"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -76,6 +77,7 @@ const OrderRedirect = () => {
             <Instagram
               href="https://www.instagram.com/govindashou/"
               target="_blank"
+              aria-label="instagram"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -137,6 +139,7 @@ const OrderRedirect = () => {
             <Twitter
               href="https://twitter.com/govindashoum?lang=en"
               target="_blank"
+              aria-label="twitter"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -225,7 +228,9 @@ const DescriptionContainer = styled.div`
 
 const ImageContainer = styled.div`
   width: 100%;
-  height: auto;
+  min-width: 240px;
+  min-height: 298px;
+  height: 100%;
   margin: 0 auto;
   max-width: 300px;
   border-radius: 15px;

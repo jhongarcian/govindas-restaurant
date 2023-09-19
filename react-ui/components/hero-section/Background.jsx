@@ -1,5 +1,5 @@
 import { styled, keyframes } from "styled-components";
-import restaurant from "/restaurant.jpeg";
+import restaurant from "/restaurant.webp";
 import "../../src/App.css";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
@@ -23,7 +23,7 @@ const Background = () => {
   return (
     <BackgroundContainer>
       <ImageFaded>
-        <Image src={restaurant} />
+        <Image alt="restaurant indoor" src={restaurant} />
         <ImageOverlay />
       </ImageFaded>
       <TextContainer>
@@ -77,8 +77,8 @@ const ImageOverlay = styled.div`
   height: 100%;
   background: linear-gradient(
     to bottom,
-    rgba(0, 0, 0, 0.47) 0%,
-    rgba(0, 0, 0, 0.47) 100%
+    rgba(0, 0, 0, 0.9) 0%,
+    rgba(0, 0, 0, 0.6) 100%
   );
 `;
 
@@ -147,11 +147,9 @@ const ParagraphStyle = styled.p`
 const ParagraphText = () => {
   return (
     <ParagraphStyle>
-      We strive to offer you the best and humblest tastings with dedication to
-      quality, healthy living, and a higher taste. Govinda’s uses the finest
-      ingredients to prepare fresh vegetarian meals every day with a diverse
-      variety of dining options. No Garlic, Onions and Mushrooms are used in our
-      preps.
+      "At Govinda's, we offer fresh, diverse vegetarian meals daily, made with
+      the finest ingredients. Our commitment to quality means no garlic, onions,
+      or mushrooms in our dishes."
     </ParagraphStyle>
   );
 };

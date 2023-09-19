@@ -7,9 +7,9 @@ const Title = ({ title, info, subtitle, white_color }) => {
     <TitleContainer>
       <SectionInfoText text={info} />
       <TitleWrapper>
-        <Graphic src={image} />
+        <Graphic alt="icon title" src={image} />
         <SectionTitleText text={title} textColor={white_color} />
-        <Graphic src={image} />
+        <Graphic alt="icon title" src={image} />
       </TitleWrapper>
       <SectionSubtitleText text={subtitle} />
     </TitleContainer>
@@ -26,7 +26,7 @@ const TitleContainer = styled.section`
 `;
 
 const SectionInfoStyle = styled.h2`
-  color: #d0af3d;
+  color: #ffc800;
   text-align: center;
   font-family: "Josefin Sans";
   font-size: 20px;
