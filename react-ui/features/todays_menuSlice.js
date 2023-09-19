@@ -1,7 +1,7 @@
 import {createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 export const fetchTodaysMenu = createAsyncThunk("today/menu", async() => {
-    const menuUrl = "http://localhost:8080/today-menu";
+    const menuUrl = "https://govindas-backend.onrender.com/today-menu";
 
     try {
         const response = await fetch(menuUrl, {method: "GET"});

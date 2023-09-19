@@ -37,7 +37,7 @@ const storage = multer.diskStorage({
 const upload = multer({storage: storage, limits: {fieldSize: 10 * 1024 * 1024 }});
 
 router.get("/", (req, res) => {
-    res.sendFile(-__dirname + "/index.html");
+    res.sendFile(__dirname + "/index.html");
 });
 
 // POST tweet
@@ -61,7 +61,6 @@ router.post("/upload", upload.single("image"), async (req, res) => {
         };
         const insertedId = await storeInputData(incommingObj);
         await deletePreviousMenuData(insertedId - 1);
-        console.log(insertedId)
     
         res.status(200).json({message: "Tweet Posted"})
     } catch (error) {

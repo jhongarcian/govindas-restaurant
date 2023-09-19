@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 export const fetchReviews = createAsyncThunk("get/reviews", async() => {
-    const reviewUrl = "http://localhost:8080/api/reviews";
+    const reviewUrl = "https://govindas-backend.onrender.com/api/reviews";
 
     try {
         const response = await fetch(reviewUrl, {method: "GET"});
