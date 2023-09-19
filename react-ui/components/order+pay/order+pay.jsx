@@ -183,7 +183,6 @@ const WrapContainer = styled.div`
   margin: 0 auto;
   @media (width >= 990px) {
     flex-direction: row;
-    justify-content: space-between;
   }
 `;
 

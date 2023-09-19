@@ -13,12 +13,11 @@ const Landing = () => {
       <Background />
       <AboutUs />
       <OurMenu />
+      <CateringRequest />
+      <TodaysMenu/>
+      <OrderRedirect />
       <Testimonials />
       <LeaveReviews />
-      <TodaysMenu/>
-      <CateringRequest />
-      <OrderRedirect />
-      <GiftCards/>
     </>
   );
 };

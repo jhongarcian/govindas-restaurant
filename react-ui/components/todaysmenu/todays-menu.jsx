@@ -133,7 +133,7 @@ const MenuContainer = styled.section`
   width: 100%;
   display: flex;
   flex-shrink: 0;
-  background: #fff;
+  background-color: rgba(252, 248, 239, 0.959);
 `;
 
 const MenuWrapper = styled.div`
