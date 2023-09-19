@@ -22,10 +22,10 @@ const Card = styled.div`
   justify-content: space-around;
   align-items: center;
   border-radius: 30px;
-  border: 1px solid #F1E6E3;
+  border: none;
   background: #fff;
   width: 100%;
-  height: 50px;
+  height: 70px;
   padding: 14px;
   gap: 14px;
   &:hover {
