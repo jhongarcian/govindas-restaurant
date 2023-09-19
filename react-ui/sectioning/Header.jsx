@@ -102,8 +102,8 @@ const NavContainer = styled.nav`
 const IconContainer = styled.button`
   background: none;
   border: none;
-  height: ${(props) => (props.size <= 992 ? "60px;" : "110px:;")};
-  width: ${(props) => (props.size <= 992 ? "60px;" : "110px;")};
+  height: ${(props) => (props.size <= 992 ? "70px;" : "110px:;")};
+  width: ${(props) => (props.size <= 992 ? "70px;" : "110px;")};
 `;
 
 const LargeScreenContainer = styled.ul`
