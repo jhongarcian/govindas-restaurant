@@ -165,7 +165,10 @@ const WrapperText = styled.div`
 `;
 
 const Logo = styled.img`
-  max-width: 90px;
+  width: 90px;
+  height: 90px;
+  aspect-ratio: 4/3;
+  object-fit: contain;
   display: block;
 `;
 

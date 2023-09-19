@@ -37,18 +37,21 @@ const LeaveReviews = () => {
       return;
     }
     try {
-      const response = await fetch("https://govindas-backend.onrender.com/add-review", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Access-Control-Allow-Headers": "*",
-        },
-        body: JSON.stringify({
-          rating: rating,
-          comment: comment,
-          name: name,
-        }),
-      });
+      const response = await fetch(
+        "https://govindas-backend.onrender.com/add-review",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Headers": "*",
+          },
+          body: JSON.stringify({
+            rating: rating,
+            comment: comment,
+            name: name,
+          }),
+        }
+      );
       if (response.ok) {
         const data = await response.json();
         setName("");
@@ -278,21 +281,32 @@ const Discount = styled.span`
 `;
 
 const Button = styled.button`
-  width: 120px;
-  height: 34px;
-  color: #fff;
   background: #d0af3d;
-  font-family: "Josefin Sans";
-  font-size: 18px;
-  font-style: normal;
+  border-radius: 999px;
+  box-shadow: #d0af3d 0 10px 20px -10px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  font-family: Inter, Helvetica, "Apple Color Emoji", "Segoe UI Emoji",
+    NotoColorEmoji, "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji",
+    EmojiSymbols, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue",
+    "Noto Sans", sans-serif;
+  font-size: 16px;
   font-weight: 700;
-  line-height: normal;
-  letter-spacing: 2.2px;
-  text-transform: uppercase;
-  border: transparent;
-  border-radius: 14px;
+  line-height: 24px;
+  opacity: 1;
+  outline: 0 solid transparent;
+  padding: 8px 28px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: fit-content;
+  word-break: break-word;
+  border: 0;
+  text-transform: capitalize;
+  margin: 0 auto;
   &:hover {
-    background: #ad9332;
+    background: #b99d35;
   }
 `;
 

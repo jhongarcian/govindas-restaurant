@@ -1,12 +1,12 @@
 [
     {
-        "name": "tofu cooked in tomato sauce",
+        "name": "stir fry tofu",
         "price": 50,
         "allergy": "V,GF",
         "image": "/our-menu/dishpic.png"
     },
     {
-        "name": "eggplant cooked with yogurt",
+        "name": "paneer makhani",
         "price": 50,
         "allergy": "GF",
         "image": "/our-menu/Ellipse 3588 (1).png"
