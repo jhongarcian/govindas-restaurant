@@ -23,7 +23,7 @@ const PostMenu = () => {
     { id: 12, value: "" },
   ]);
   // Production
-  const reviewUrl = `${apiUrl.production}/upload`;
+  const productionUrl = `${apiUrl.production}/upload`;
   // Development
   const devUrl = `${apiUrl.development}/upload`;
 
@@ -64,7 +64,7 @@ const PostMenu = () => {
           method: "POST",
           body: formData,
         };
-        const response = await fetch(devUrl, options);
+        const response = await fetch(productionUrl, options);
         if (response.ok) {
           const data = await response.json();
           console.log(data);

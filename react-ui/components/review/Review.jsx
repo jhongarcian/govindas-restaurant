@@ -18,7 +18,7 @@ const LeaveReviews = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   // Production
-  const reviewUrl = `${apiUrl.production}/add-review`;
+  const productionUrl = `${apiUrl.production}/add-review`;
   // Development
   const devUrl = `${apiUrl.development}/add-review`;
 
@@ -43,7 +43,7 @@ const LeaveReviews = () => {
       return;
     }
     try {
-      const response = await fetch(devUrl, {
+      const response = await fetch(productionUrl, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

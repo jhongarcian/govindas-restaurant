@@ -23,7 +23,7 @@ const GiftCards = () => {
   const location = useLocation();
 
   // Production
-  const reviewUrl = `${apiUrl.production}/buy-gift-card`;
+  const productionUrl = `${apiUrl.production}/buy-gift-card`;
   // Development
   const devUrl = `${apiUrl.development}/buy-gift-card`;
 
@@ -79,7 +79,7 @@ const GiftCards = () => {
         },
         body: JSON.stringify(inputFields),
       };
-      const response = await fetch(devUrl, options);
+      const response = await fetch(productionUrl, options);
       if (response.ok) {
         const data = await response.json();
         const { url } = data;

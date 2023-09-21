@@ -3,13 +3,13 @@ import apiUrl from "../mocks/config.json";
 
 export const fetchReviews = createAsyncThunk("get/reviews", async() => {
     // Production
-    const reviewUrl = `${apiUrl.production}/api/reviews`;
+    const productionUrl = `${apiUrl.production}/api/reviews`;
     // Development
     const devUrl = `${apiUrl.development}/api/reviews`;
 
 
     try {
-        const response = await fetch(devUrl, {method: "GET"});
+        const response = await fetch(productionUrl, {method: "GET"});
         if(response.ok) {
             const data = await response.json();
             return data
