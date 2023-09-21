@@ -43,7 +43,7 @@ const LeaveReviews = () => {
       return;
     }
     try {
-      const response = await fetch(productionUrl, {
+      const response = await fetch(devUrl, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

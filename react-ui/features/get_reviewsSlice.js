@@ -9,7 +9,7 @@ export const fetchReviews = createAsyncThunk("get/reviews", async() => {
 
 
     try {
-        const response = await fetch(productionUrl, {method: "GET"});
+        const response = await fetch(devUrl, {method: "GET"});
         if(response.ok) {
             const data = await response.json();
             return data
