@@ -3,6 +3,7 @@ import { ReviewStars } from "../index";
 import styled from "styled-components";
 import { Title } from "../index";
 import "../../src/App.css";
+import apiUrl from "../../mocks/config.json";
 
 const LeaveReviews = () => {
   const [name, setName] = useState("");
@@ -15,6 +16,11 @@ const LeaveReviews = () => {
     rating: false,
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+
+  // Production
+  const reviewUrl = `${apiUrl.production}/add-review`;
+  // Development
+  const devUrl = `${apiUrl.development}/add-review`;
 
   const reviewRespond = {
     positive: "Thank you for your kind words!",
@@ -37,21 +43,18 @@ const LeaveReviews = () => {
       return;
     }
     try {
-      const response = await fetch(
-        "https://govindas-backend.onrender.com/add-review",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "Access-Control-Allow-Headers": "*",
-          },
-          body: JSON.stringify({
-            rating: rating,
-            comment: comment,
-            name: name,
-          }),
-        }
-      );
+      const response = await fetch(devUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Headers": "*",
+        },
+        body: JSON.stringify({
+          rating: rating,
+          comment: comment,
+          name: name,
+        }),
+      });
       if (response.ok) {
         const data = await response.json();
         setName("");
