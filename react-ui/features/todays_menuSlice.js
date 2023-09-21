@@ -1,10 +1,14 @@
 import {createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import apiUrl from "../mocks/config.json";
 
 export const fetchTodaysMenu = createAsyncThunk("today/menu", async() => {
-    const menuUrl = "https://govindas-backend.onrender.com/today-menu";
+    // Production
+    const productionUrl = `${apiUrl.production}/today-menu`;
+    // Development
+    const devUrl = `${apiUrl.development}/today-menu`;
 
     try {
-        const response = await fetch(menuUrl, {method: "GET"});
+        const response = await fetch(productionUrl, {method: "GET"});
         if (response.ok) {
             const data = await response.json();
             return data;

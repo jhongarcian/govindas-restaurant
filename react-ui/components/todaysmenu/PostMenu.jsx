@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { styled } from "styled-components";
 import Title from "../title/Title";
+import apiUrl from "../../mocks/config.json";
 import "../../src/App.css";
 
 const PostMenu = () => {
@@ -21,6 +22,10 @@ const PostMenu = () => {
     { id: 11, value: "" },
     { id: 12, value: "" },
   ]);
+  // Production
+  const productionUrl = `${apiUrl.production}/upload`;
+  // Development
+  const devUrl = `${apiUrl.development}/upload`;
 
   const handleFileChange = (event) => {
     const file = event.target.files[0];
@@ -59,7 +64,7 @@ const PostMenu = () => {
           method: "POST",
           body: formData,
         };
-        const response = await fetch("https://govindas-backend.onrender.com/upload", options);
+        const response = await fetch(productionUrl, options);
         if (response.ok) {
           const data = await response.json();
           console.log(data);

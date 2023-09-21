@@ -4,6 +4,7 @@ import { Title } from "../index";
 import styled from "styled-components";
 import mobile_image from "/gift-card/gift-card.webp";
 import desktop_image from "/gift-card/gift-card-desktop-1.webp";
+import apiUrl from "../../mocks/config.json";
 import "../../src/App.css";
 
 const GiftCards = () => {
@@ -20,6 +21,11 @@ const GiftCards = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [stripeUrl, setStripeUrl] = useState("");
   const location = useLocation();
+
+  // Production
+  const productionUrl = `${apiUrl.production}/buy-gift-card`;
+  // Development
+  const devUrl = `${apiUrl.development}/buy-gift-card`;
 
   const handleWindowResize = () => {
     setWindowWidth(window.innerWidth);
@@ -73,10 +79,7 @@ const GiftCards = () => {
         },
         body: JSON.stringify(inputFields),
       };
-      const response = await fetch(
-        "https://govindas-backend.onrender.com/buy-gift-card",
-        options
-      );
+      const response = await fetch(productionUrl, options);
       if (response.ok) {
         const data = await response.json();
         const { url } = data;

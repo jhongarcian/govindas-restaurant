@@ -1,10 +1,15 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import apiUrl from "../mocks/config.json";
 
 export const fetchReviews = createAsyncThunk("get/reviews", async() => {
-    const reviewUrl = "https://govindas-backend.onrender.com/api/reviews";
+    // Production
+    const productionUrl = `${apiUrl.production}/api/reviews`;
+    // Development
+    const devUrl = `${apiUrl.development}/api/reviews`;
+
 
     try {
-        const response = await fetch(reviewUrl, {method: "GET"});
+        const response = await fetch(productionUrl, {method: "GET"});
         if(response.ok) {
             const data = await response.json();
             return data
