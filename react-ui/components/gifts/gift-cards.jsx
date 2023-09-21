@@ -79,7 +79,7 @@ const GiftCards = () => {
         },
         body: JSON.stringify(inputFields),
       };
-      const response = await fetch(productionUrl, options);
+      const response = await fetch(devUrl, options);
       if (response.ok) {
         const data = await response.json();
         const { url } = data;

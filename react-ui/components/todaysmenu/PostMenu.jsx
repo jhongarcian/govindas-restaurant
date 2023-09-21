@@ -64,7 +64,7 @@ const PostMenu = () => {
           method: "POST",
           body: formData,
         };
-        const response = await fetch(productionUrl, options);
+        const response = await fetch(devUrl, options);
         if (response.ok) {
           const data = await response.json();
           console.log(data);
