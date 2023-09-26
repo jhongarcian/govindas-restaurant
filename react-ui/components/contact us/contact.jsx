@@ -1,149 +1,178 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import "../../src/App.css";
+import {
+  InputLabelRequired,
+  InputField,
+  FieldContainer,
+  InputLabel,
+} from "../catering/FormStyledComponents";
 
 const Contact = () => {
   return (
-    <ContactUS>
-      {
-        <form
-          action="https://formspree.io/f/myyqzdav"
-          method="POST"
-          className="main"
-        >
-          <div className="container">
-            <div className="info-section">
-              <div className="info-container">
-                <h1 className="title">Contact US</h1>
-                <div className="sub-title">We'd Love to hear your Feedback</div>
-                <div className="headings">Name :</div>
-                <input className="fill-ins" type="text" name="name" />
-                <div className="headings">Email :</div>
-                <input className="fill-ins" type="text" name="email" />
-                <div className="headings">Comment :</div>
-                <input className="message" type="text" name="message" />
-                <div className="btn-container">
-                  <button type="submit" className="btn">
-                    Submit
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </form>
-      }
-    </ContactUS>
+    <ContactSection>
+      <ContactHeader>
+        <WrapContainer>
+          <ContactTitle>
+            <TextSpanTitle>Contact us</TextSpanTitle>
+            <TextH1Title>
+              How can we
+              <TextH1TitleYellow> Help?</TextH1TitleYellow>
+            </TextH1Title>
+          </ContactTitle>
+          <ImageContainer>
+            <ImageWrapper>
+              <Image src="/contact-us.webp" alt="contact us" />
+            </ImageWrapper>
+          </ImageContainer>
+        </WrapContainer>
+      </ContactHeader>
+      <ContactForm></ContactForm>
+    </ContactSection>
   );
 };
 
 export default Contact;
 
-const ContactUS = styled.div`
-  .main {
-    height: 1229px;
-    width: 100%;
-    display: flex;
-    flex-shrink: 0;
-    background-color: rgba(252, 248, 239, 0.959);
+const ContactSection = styled.section`
+  width: 100%;
+  height: 100%;
+  background: rgba(252, 248, 239, 0.959);
+`;
+
+const ContactHeader = styled.div`
+  width: 100%;
+  height: 100%;
+  background: #f6f7f8;
+  padding-top: 44px;
+  margin-bottom: 44px;
+  @media (width >= 628px) {
+    height: 60vh;
   }
-  .container {
-    width: 100%;
-    display: flex;
+  @media (width >= 2000px) {
+    height: 100%;
+  }
+`;
+
+const WrapContainer = styled.div`
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  @media (width >= 980px) {
+    flex-direction: row;
+  }
+  @media (width >= 2000px) {
+    max-width: 1312px;
     justify-content: center;
-  }
-  .img-container {
-    display: flex;
     align-items: center;
-    flex: 0;
-    padding: 0px 2% 0px 5%;
-  }
-  .img {
-    width: 686px;
-    height: 898px;
-    flex-shrink: 0;
-  }
-  .info-section {
-    display: flex;
     flex-direction: column;
-    // flex: 1;
-    justify-content: center;
   }
-  .info-container {
-    display: flex;
-    flex-direction: column;
-    align-self: center;
-    align-content: space-around;
+`;
+
+const ContactTitle = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 32px;
+  @media (width >= 980px) {
+    margin-bottom: 0;
+    height: 60vh;
+    width: 50%;
   }
-  .title {
-    color: #000;
-    font-family: Caviar Dreams;
-    font-size: 33px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    letter-spacing: 2.75px;
-    text-transform: uppercase;
+  @media (width >= 2000px) {
+    height: 100%;
   }
-  .sub-title {
-    color: #595555;
-    font-family: Josefin Sans;
-    font-size: 22px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
+`;
+
+const TextSpanTitle = styled.span`
+  line-height: 18px;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 4px;
+  font-family: "Open-Sans-Condensed";
+  color: rgb(82, 96, 109);
+  text-transform: uppercase;
+  @media (width >= 980px) {
+    line-height: 20px;
+    font-size: 20px;
   }
-  .headings {
-    color: #000;
-    font-family: Caviar Dreams;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    margin-bottom: 2px;
+`;
+
+const TextH1Title = styled.h1`
+  font-family: "Open-Sans-Condensed";
+  font-size: 40px;
+  font-style: normal;
+  letter-spacing: 4px;
+  text-transform: capitalize;
+  font-weight: bold;
+  line-height: 40px;
+  @media (width >= 628px) {
+    font-size: 60px;
+    line-height: 60px;
   }
-  .fill-ins {
-    width: 730px;
-    height: 65px;
-    flex-shrink: 0;
-    margin: 10px 0px 10px 0px;
+  @media (width >= 1200px) {
+    font-size: 80px;
+    line-height: 80px;
   }
-  .message {
-    width: 730px;
-    height: 166px;
-    flex-shrink: 0;
-    fill: #fff;
-    stroke-width: 1px;
-    stroke: rgba(0, 0, 0, 0.34);
+  @media (width >= 2000px) {
+    font-size: 120px;
+    line-height: 120px;
   }
-  .btn-container {
-    display: flex;
-    padding: 10% 0px 0px 0px;
-    column-gap: 10%;
-    justify-content: center;
+`;
+
+const TextH1TitleYellow = styled.strong`
+  color: #d0af3d;
+`;
+
+const ImageContainer = styled.div`
+  width: 100%;
+  height: 100%;
+  @media (width >= 980px) {
+    min-height: 200px;
+    position: relative;
+    width: 50%;
   }
-  .btn {
-    width: 240px;
-    height: 70px;
-    flex-shrink: 0;
-    color: #fff;
-    background: #d0af3d;
-    font-family: Open Sans Condensed;
-    font-size: 22px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    letter-spacing: 2.2px;
-    text-transform: uppercase;
-    border: 0px;
+  @media (width >= 1230px) {
+    position: relative;
+    width: 50%;
   }
-  .discount {
-    display: flex;
-    align-self: center;
-    color: #000;
-    font-family: Josefin Sans;
-    font-size: 25px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 40px; /* 160% */
+`;
+
+const ImageWrapper = styled.div`
+  height: 100%;
+  width: 100%;
+  @media (width >= 980px) {
+    width: 50vw;
+    position: absolute;
+    height: 100%;
   }
+  @media (width >= 2000px) {
+    max-width: 655px;
+    position: absolute;
+    height: 100%;
+  }
+`;
+
+const Image = styled.img`
+  object-fit: cover;
+  object-position: center;
+  border-radius: 16px;
+  overflow: hidden;
+  max-height: 200px;
+  @media (width >= 980px) {
+    max-height: 400px;
+  }
+
+  @media (width >= 1200px) {
+    max-height: 1200px;
+    border-radius: 36px;
+  }
+`;
+
+const ContactForm = styled.div`
+  height: 100%;
+  width: 90%;
+  margin: 0 auto;
 `;
